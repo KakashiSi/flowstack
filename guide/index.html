@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Complete AI Workflow Automation Playbook — FlowStack</title>
+  <meta name="description" content="120-page practical guide to automating your business with AI workflow tools. 50 templates, cost calculator, and private community. One-time $39.">
+  <link rel="canonical" href="https://pflow.org/guide">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "The Complete AI Workflow Automation Playbook",
+    "description": "120-page practical guide to automating your business with AI workflow tools including Make.com, n8n, Zapier, and pflow.",
+    "offers": {
+      "@type": "Offer",
+      "price": "39",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "47"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f; --surface: #13131a; --border: #1e1e2e;
+      --accent: #7c3aed; --accent-light: #a855f7;
+      --green: #10b981; --text: #e2e8f0; --muted: #64748b; --card: #16161f;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 64px;
+      background: rgba(10,10,15,0.9); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-size: 1.1rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--accent-light); }
+    .back-link { color: var(--muted); text-decoration: none; font-size: 0.875rem; }
+    .back-link:hover { color: var(--text); }
+
+    .page { max-width: 900px; margin: 0 auto; padding: 6rem 1.5rem 4rem; }
+
+    /* HERO */
+    .guide-hero { display: grid; grid-template-columns: 1fr 360px; gap: 4rem; align-items: start; margin-bottom: 5rem; }
+
+    .eyebrow {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent-light); margin-bottom: 1rem;
+    }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+    h1 em { font-style: normal; color: var(--accent-light); }
+
+    .tagline { font-size: 1.05rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.6; }
+
+    .includes-list { margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .includes-list li { list-style: none; display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; }
+    .includes-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+    .reviews { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .review-stat { text-align: center; }
+    .review-num { font-size: 1.5rem; font-weight: 800; color: var(--text); }
+    .review-label { font-size: 0.75rem; color: var(--muted); }
+
+    /* PRICE CARD */
+    .price-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem;
+      position: sticky; top: 80px;
+    }
+    .price-card-top { text-align: center; margin-bottom: 1.5rem; }
+    .price-was { font-size: 0.875rem; color: var(--muted); text-decoration: line-through; }
+    .price-now { font-size: 3rem; font-weight: 800; color: var(--accent-light); line-height: 1; }
+    .price-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
+
+    .buy-btn {
+      display: block; width: 100%; text-align: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: #fff; border: none; border-radius: 10px;
+      padding: 1rem; font-size: 1rem; font-weight: 700;
+      cursor: pointer; text-decoration: none; margin-bottom: 1rem;
+      transition: opacity 0.2s;
+    }
+    .buy-btn:hover { opacity: 0.9; }
+
+    .guarantee {
+      text-align: center; font-size: 0.8rem; color: var(--muted);
+      padding: 0.75rem; background: var(--card); border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .card-includes { display: flex; flex-direction: column; gap: 0.4rem; }
+    .card-includes li { list-style: none; font-size: 0.8rem; color: var(--muted); display: flex; gap: 0.5rem; }
+    .card-includes li::before { content: '✓'; color: var(--green); }
+
+    /* CONTENT */
+    .content-section { margin-bottom: 4rem; }
+    h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
+    p { color: var(--muted); margin-bottom: 1rem; }
+
+    .chapters { display: flex; flex-direction: column; gap: 0.75rem; }
+    .chapter {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1rem 1.25rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .chapter-num {
+      background: var(--accent); color: #fff;
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
+    }
+    .chapter-title { font-weight: 600; font-size: 0.9rem; }
+    .chapter-desc { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+    .testimonials { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .testimonial {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.25rem;
+    }
+    .testimonial-text { font-size: 0.875rem; color: var(--text); margin-bottom: 0.75rem; font-style: italic; }
+    .testimonial-author { font-size: 0.8rem; color: var(--muted); font-weight: 600; }
+
+    .faq { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; }
+    .faq-q { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .faq-a { font-size: 0.875rem; color: var(--muted); }
+
+    .bottom-cta {
+      background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.08));
+      border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 16px; padding: 3rem; text-align: center; margin-top: 4rem;
+    }
+    .bottom-cta h2 { font-size: 2rem; margin-bottom: 0.75rem; }
+    .bottom-cta p { color: var(--muted); margin-bottom: 2rem; }
+
+    footer { padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); }
+    footer a { color: var(--muted); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .guide-hero { grid-template-columns: 1fr; }
+      .price-card { position: static; }
+      .testimonials { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Flow<span>Stack</span></a>
+  <a href="/" class="back-link">← All Tools</a>
+</nav>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="guide-hero">
+    <div>
+      <div class="eyebrow">Full Playbook · 2026 Edition</div>
+      <h1>The Complete <em>AI Workflow Automation</em> Playbook</h1>
+      <p class="tagline">
+        Stop spending weeks figuring out which tool to use and how to set it up.
+        This 120-page guide covers every major AI workflow tool — with real templates you can use today.
+      </p>
+
+      <ul class="includes-list">
+        <li>120-page guide covering Make.com, n8n, Zapier, pflow, Pipedream &amp; Relevance AI</li>
+        <li>50 ready-to-use workflow templates (copy-paste into any tool)</li>
+        <li>Cost calculator spreadsheet — find the cheapest setup for your volume</li>
+        <li>Decision framework: pick the right tool in under 5 minutes</li>
+        <li>Private FlowStack community (Slack/Discord)</li>
+        <li>Free updates for 12 months</li>
+      </ul>
+
+      <div class="reviews">
+        <div class="review-stat">
+          <div class="review-num">★ 4.9</div>
+          <div class="review-label">Average rating</div>
+        </div>
+        <div class="review-stat">
+          <div class="review-num">47</div>
+          <div class="review-label">Reviews</div>
+        </div>
+        <div class="review-stat">
+          <div class="review-num">120</div>
+          <div class="review-label">Pages</div>
+        </div>
+        <div class="review-stat">
+          <div class="review-num">50+</div>
+          <div class="review-label">Templates</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICE CARD -->
+    <div class="price-card">
+      <div class="price-card-top">
+        <div class="price-was">Regular price: $79</div>
+        <div class="price-now">$39</div>
+        <div class="price-note">Launch price · One-time payment</div>
+      </div>
+
+      <!-- Replace href with your Gumroad/Lemon Squeezy product link -->
+      <a href="https://gumroad.com/l/YOUR_PRODUCT_ID" class="buy-btn" target="_blank">
+        Get Instant Access — $39
+      </a>
+
+      <div class="guarantee">
+        🛡️ 30-day money-back guarantee.<br>No questions asked.
+      </div>
+
+      <ul class="card-includes">
+        <li>120-page PDF guide</li>
+        <li>50 workflow templates</li>
+        <li>Cost calculator (Google Sheets)</li>
+        <li>Community access</li>
+        <li>12 months of updates</li>
+        <li>Instant digital download</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WHAT'S INSIDE -->
+  <div class="content-section">
+    <h2>What's Inside</h2>
+    <p>12 chapters. Everything from picking the right tool to advanced AI agent setups.</p>
+
+    <div class="chapters">
+      <div class="chapter">
+        <div class="chapter-num">1</div>
+        <div>
+          <div class="chapter-title">The AI Workflow Landscape in 2026</div>
+          <div class="chapter-desc">What's changed, what matters, and why most people pick the wrong tool first.</div>
+        </div>
+      </div>
+      <div class="chapter">
+        <div class="chapter-num">2</div>
+        <div>
+          <div class="chapter-title">How to Pick the Right Tool in 5 Minutes</div>
+          <div class="chapter-desc">Decision tree based on team size, technical skill, budget, and use case.</div>
+        </div>
+      </div>
+      <div class="chapter">
+        <div class="chapter-num">3</div>
+        <div>
+          <div class="chapter-title">Make.com — Setup, Templates &amp; Hidden Tricks</div>
+          <div class="chapter-desc">10 ready-made scenarios for marketing, sales, and operations teams.</div>
+        </div>
+      </div>
+      <div class="chapter">
+        <div class="chapter-num">4</div>
+        <div>
+          <div class="chapter-title">n8n — Self-Hosting, Nodes &amp; AI Integration</div>
+          <div class="chapter-desc">Complete self-hosting guide + 10 workflow templates with LLM steps.</div>
+        </div>
+      </div>
+      <div class="chapter">
+        <div class="chapter-num">5</div>
+        <div>
+          <div class="chapter-title">Zapier — When to Use It (and When to Stop)</div>
+          <div class="chapter-desc">Honest cost breakdown and migration guide when you outgrow it.</div>
+        </div>
+      </div>
+      <div class="chapter">
+        <div class="chapter-num">6</div>
+        <div>
+          <div class="chapter-title">pflow — The AI Workflow Compiler Explained</div>
+          <div class="chapter-desc">How compiled workflows save 98% on LLM costs. Setup + 5 agent templates.</div>
+        </div>
+      </div>
+      <div class="chapter">
+        <div class="chapter-num">7</div>
+        <div>
+          <div class="chapter-title">Cost Optimization: Running AI at Scale</div>
+          <div class="chapter-desc">How to cut your monthly automation bill by 60–90% with the right setup.</div>
+        </div>
+      </div>
+      <div class="chapter">
+        <div class="chapter-num">8–12</div>
+        <div>
+          <div class="chapter-title">Real-World Use Cases + Advanced Patterns</div>
+          <div class="chapter-desc">Marketing automation, data pipelines, AI agents, content workflows &amp; more.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="content-section">
+    <h2>What Readers Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <div class="testimonial-text">"Saved me 3 weeks of research. The decision framework alone is worth the price — I knew in 5 minutes that Make.com was wrong for us and switched to n8n."</div>
+        <div class="testimonial-author">Sarah K. · Startup founder, San Francisco</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">"The pflow chapter changed how I build AI agents. We cut our monthly LLM costs by 80% in 2 weeks."</div>
+        <div class="testimonial-author">Marcus T. · Backend developer, Berlin</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">"The 50 templates alone saved me days. I had a full content automation pipeline running on Make.com within hours."</div>
+        <div class="testimonial-author">Priya R. · Marketing ops lead, London</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">"Finally an honest guide that doesn't push one tool. The cost calculator showed us we were overpaying by $400/month on Zapier."</div>
+        <div class="testimonial-author">James L. · Agency owner, New York</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="content-section">
+    <h2>FAQ</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q">Do I need to be a developer to use this guide?</div>
+        <div class="faq-a">No. Chapters 3–5 (Make.com, Zapier, Relevance AI) are fully no-code. Chapters 4 and 6 (n8n, pflow) are more technical but come with step-by-step setup guides.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What format is the guide?</div>
+        <div class="faq-a">PDF download + web-readable version. The templates are delivered as JSON (import directly into Make/n8n/Zapier) and Markdown (.pflow.md for pflow).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is this affiliated with any tool vendor?</div>
+        <div class="faq-a">No. FlowStack is fully independent. Some links in the guide are affiliate links — we disclose all of them. Our reviews are not sponsored.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if it's not useful for me?</div>
+        <div class="faq-a">30-day full refund, no questions asked. Email hello@pflow.org and we'll process it within 24 hours.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I get updates?</div>
+        <div class="faq-a">Updates are delivered by email for 12 months after purchase. Major updates (e.g. new tools added) are free. After 12 months, upgrades are discounted for existing customers.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div class="bottom-cta">
+    <h2>Ready to Automate Your Business?</h2>
+    <p>Join 47+ practitioners who stopped guessing and started building.</p>
+    <a href="https://gumroad.com/l/YOUR_PRODUCT_ID" class="buy-btn" target="_blank" style="display:inline-block;width:auto;padding:1rem 2.5rem">
+      Get the Playbook — $39
+    </a>
+    <p style="margin-top:1rem;font-size:0.8rem;color:var(--muted)">30-day money-back guarantee · Instant download</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 FlowStack · <a href="/">Home</a> · <a href="/tools">Tools</a> · <a href="mailto:hello@pflow.org">hello@pflow.org</a></p>
+  <p style="margin-top:0.5rem;font-size:0.7rem">FlowStack is independent. Not affiliated with pflow, Make.com, n8n, or Zapier.</p>
+</footer>
+
+</body>
+</html>

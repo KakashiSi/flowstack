@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowStack Blog — AI Workflow Automation Insights</title>
+  <meta name="description" content="In-depth reviews, comparisons, and guides on AI workflow automation tools. Independent analysis of pflow, Make.com, n8n, Zapier, and more.">
+  <link rel="canonical" href="https://pflow.org/blog">
+  <meta property="og:title" content="FlowStack Blog — AI Workflow Automation Insights">
+  <meta property="og:description" content="Independent reviews and guides on AI workflow automation tools.">
+  <meta property="og:url" content="https://pflow.org/blog">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "FlowStack Blog",
+    "url": "https://pflow.org/blog",
+    "description": "Independent AI workflow automation insights, reviews, and comparisons.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "FlowStack",
+      "url": "https://pflow.org"
+    },
+    "dateModified": "2026-07-05"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0a0a0f; color: #e2e8f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; }
+    a { color: #a855f7; }
+    .page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .hero { padding: 7rem 0 3rem; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 1.5rem; }
+    .breadcrumb a { color: #64748b; text-decoration: none; }
+    .breadcrumb a:hover { color: #a855f7; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+    .hero p { color: #94a3b8; font-size: 1.1rem; max-width: 600px; }
+    .tag { display: inline-block; background: rgba(124,58,237,0.15); color: #a855f7; border: 1px solid rgba(168,85,247,0.3); border-radius: 20px; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .tag.green { background: rgba(16,185,129,0.12); color: #10b981; border-color: rgba(16,185,129,0.3); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; padding: 2rem 0 5rem; }
+    .card { background: #12121a; border: 1px solid #1e1e2e; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.2s, transform 0.2s; }
+    .card:hover { border-color: #7c3aed; transform: translateY(-2px); }
+    .card-meta { font-size: 0.78rem; color: #64748b; }
+    .card h2 { font-size: 1.1rem; font-weight: 700; line-height: 1.35; }
+    .card h2 a { color: #e2e8f0; text-decoration: none; }
+    .card h2 a:hover { color: #a855f7; }
+    .card p { font-size: 0.9rem; color: #94a3b8; flex: 1; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem; }
+    .read-more { font-size: 0.85rem; font-weight: 600; color: #a855f7; text-decoration: none; }
+    .read-more:hover { text-decoration: underline; }
+    .section-label { font-size: 0.8rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-top: 3rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #1e1e2e; }
+    .cta-bar { background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.08)); border: 1px solid rgba(124,58,237,0.3); border-radius: 16px; padding: 2.5rem; text-align: center; margin: 0 0 5rem; }
+    .cta-bar h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .cta-bar p { color: #94a3b8; margin-bottom: 1.5rem; }
+    .cta-btn { display: inline-block; background: #7c3aed; color: #fff; padding: 0.75rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: background 0.2s; }
+    .cta-btn:hover { background: #6d28d9; }
+    footer { border-top: 1px solid #1e1e2e; padding: 2.5rem 0; color: #64748b; font-size: 0.85rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: #64748b; text-decoration: none; }
+    .footer-links a:hover { color: #a855f7; }
+    .disclaimer { font-size: 0.78rem; color: #475569; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid #1e1e2e">
+  <a href="/" style="font-size:1.1rem;font-weight:700;color:#e2e8f0;text-decoration:none">Flow<span style="color:#a855f7">Stack</span></a>
+  <div style="display:flex;gap:2rem">
+    <a href="/tools" style="color:#64748b;text-decoration:none;font-size:0.9rem">Tools</a>
+    <a href="/blog" style="color:#a855f7;text-decoration:none;font-size:0.9rem;font-weight:600">Blog</a>
+    <a href="/guide" style="color:#64748b;text-decoration:none;font-size:0.9rem">Guide</a>
+  </div>
+  <a href="/#opt-in" style="background:#7c3aed;color:#fff;padding:0.5rem 1.25rem;border-radius:8px;text-decoration:none;font-size:0.875rem;font-weight:600">Free Toolkit</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="hero">
+    <div class="breadcrumb"><a href="/">Home</a> › Blog</div>
+    <h1>FlowStack Blog</h1>
+    <p>Independent deep-dives into AI workflow automation — tools, costs, comparisons, and guides written for builders.</p>
+  </div>
+
+  <p class="section-label">Latest Articles</p>
+  <div class="grid">
+
+    <div class="card">
+      <div><span class="tag">Explainer</span></div>
+      <div class="card-meta">July 5, 2026 · 8 min read</div>
+      <h2><a href="/blog/what-is-pflow">What is pflow? The AI Workflow Compiler Explained (2026)</a></h2>
+      <p>pflow is an open-source AI workflow compiler that converts agentic reasoning into deterministic .pflow.md files — slashing costs by up to 98% after the first run.</p>
+      <div class="card-footer">
+        <a href="/blog/what-is-pflow" class="read-more">Read article →</a>
+        <span class="tag green">Free tool</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div><span class="tag">Comparison</span></div>
+      <div class="card-meta">July 5, 2026 · 12 min read</div>
+      <h2><a href="/blog/best-ai-workflow-tools-2026">7 Best AI Workflow Automation Tools in 2026 (Ranked &amp; Compared)</a></h2>
+      <p>We ranked pflow, Make.com, n8n, Zapier, Pipedream, Relevance AI, and ActivePieces across pricing, flexibility, and developer experience.</p>
+      <div class="card-footer">
+        <a href="/blog/best-ai-workflow-tools-2026" class="read-more">Read article →</a>
+        <span class="tag">Top list</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div><span class="tag">Cost guide</span></div>
+      <div class="card-meta">July 5, 2026 · 10 min read</div>
+      <h2><a href="/blog/reduce-ai-agent-costs">How to Cut AI Agent Costs by 98%: The Workflow Compiler Approach</a></h2>
+      <p>LLM reasoning is the biggest cost driver in AI agents. Here's how workflow compilers eliminate repeated inference — with real dollar numbers.</p>
+      <div class="card-footer">
+        <a href="/blog/reduce-ai-agent-costs" class="read-more">Read article →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div><span class="tag green">Free tools</span></div>
+      <div class="card-meta">July 5, 2026 · 7 min read</div>
+      <h2><a href="/blog/free-ai-workflow-tools">Free AI Workflow Automation Tools in 2026: Complete List</a></h2>
+      <p>From pflow's forever-free CLI to n8n self-hosted and Zapier's free tier — every no-cost option, with honest limits noted.</p>
+      <div class="card-footer">
+        <a href="/blog/free-ai-workflow-tools" class="read-more">Read article →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="section-label">Head-to-Head Comparisons</p>
+  <div class="grid">
+
+    <div class="card">
+      <div><span class="tag">vs</span></div>
+      <div class="card-meta">July 5, 2026 · 9 min read</div>
+      <h2><a href="/vs/pflow-vs-make">pflow vs Make.com: Which Should You Choose in 2026?</a></h2>
+      <p>Make.com is powerful for visual no-code pipelines. pflow is a free CLI for developers. We break down pricing, strengths, and who wins for each use case.</p>
+      <div class="card-footer">
+        <a href="/vs/pflow-vs-make" class="read-more">Read comparison →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div><span class="tag">vs</span></div>
+      <div class="card-meta">July 5, 2026 · 9 min read</div>
+      <h2><a href="/vs/pflow-vs-n8n">pflow vs n8n: Developer Workflow Tools Compared (2026)</a></h2>
+      <p>Both target technical users. n8n offers a visual editor and 400+ integrations; pflow compiles reasoning into near-zero-cost workflows. Here's the breakdown.</p>
+      <div class="card-footer">
+        <a href="/vs/pflow-vs-n8n" class="read-more">Read comparison →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div><span class="tag">vs</span></div>
+      <div class="card-meta">July 5, 2026 · 9 min read</div>
+      <h2><a href="/vs/pflow-vs-zapier">pflow vs Zapier: Is the Free CLI Better Than Zapier? (2026)</a></h2>
+      <p>Zapier is the default for non-technical teams. pflow is a free open-source alternative. We compare cost, setup effort, and long-term scalability.</p>
+      <div class="card-footer">
+        <a href="/vs/pflow-vs-zapier" class="read-more">Read comparison →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-bar">
+    <h3>Get the Free FlowStack Toolkit</h3>
+    <p>Templates, prompt libraries, and a cost calculator for AI workflow automation.</p>
+    <a href="/#opt-in" class="cta-btn">Get the free toolkit →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <strong style="color:#e2e8f0">Flow<span style="color:#a855f7">Stack</span></strong>
+      <div class="disclaimer">FlowStack is independent. Not affiliated with pflow, Make.com, n8n, or Zapier.</div>
+    </div>
+    <div class="footer-links">
+      <a href="/tools">Tools</a>
+      <a href="/blog">Blog</a>
+      <a href="/guide">Guide</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

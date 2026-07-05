@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All AI Workflow Automation Tools — Compared by FlowStack</title>
+  <meta name="description" content="Independent comparison of every major AI workflow automation tool in 2026. Full feature table, pricing, scores, and best-for guidance for 7 tools.">
+  <link rel="canonical" href="https://pflow.org/tools">
+  <meta property="og:title" content="All AI Workflow Automation Tools — Compared by FlowStack">
+  <meta property="og:description" content="Comprehensive independent comparison of AI workflow tools: pflow, Make.com, n8n, Zapier, Pipedream, Relevance AI, and ActivePieces.">
+  <meta property="og:url" content="https://pflow.org/tools">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "All AI Workflow Automation Tools — Compared by FlowStack",
+    "description": "Independent comparison of AI workflow automation tools including pflow, Make.com, n8n, Zapier, Pipedream, Relevance AI, and ActivePieces.",
+    "url": "https://pflow.org/tools",
+    "publisher": { "@type": "Organization", "name": "FlowStack", "url": "https://pflow.org" },
+    "dateModified": "2026-07-05"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0a0a0f; color: #e2e8f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; }
+    a { color: #a855f7; }
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .hero { padding: 7rem 0 3rem; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 1.5rem; }
+    .breadcrumb a { color: #64748b; text-decoration: none; }
+    .breadcrumb a:hover { color: #a855f7; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+    .hero p { color: #94a3b8; font-size: 1.05rem; max-width: 680px; margin-bottom: 0.75rem; }
+    .updated { font-size: 0.8rem; color: #64748b; }
+    .section-label { font-size: 0.8rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-top: 3rem; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 1px solid #1e1e2e; }
+    /* Tool cards grid */
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .tool-card { background: #12121a; border: 1px solid #1e1e2e; border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; transition: border-color 0.2s; }
+    .tool-card:hover { border-color: #7c3aed; }
+    .tool-card-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    .tool-card-name { font-size: 1.05rem; font-weight: 700; color: #e2e8f0; }
+    .score { font-size: 0.9rem; font-weight: 700; color: #10b981; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); border-radius: 20px; padding: 0.2rem 0.65rem; }
+    .tool-tagline { font-size: 0.8rem; color: #64748b; }
+    .tool-price { font-size: 0.85rem; color: #cbd5e1; }
+    .tool-price strong { color: #e2e8f0; }
+    .tool-best { font-size: 0.82rem; color: #94a3b8; }
+    .tool-best strong { color: #a855f7; font-weight: 600; }
+    .tag { display: inline-block; border-radius: 20px; font-size: 0.72rem; font-weight: 600; padding: 0.18rem 0.65rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .tag-free { background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+    .tag-paid { background: rgba(100,116,139,0.12); color: #94a3b8; border: 1px solid rgba(100,116,139,0.2); }
+    .tag-open { background: rgba(124,58,237,0.12); color: #a855f7; border: 1px solid rgba(168,85,247,0.3); }
+    .cta-link { font-size: 0.83rem; font-weight: 600; color: #a855f7; text-decoration: none; margin-top: auto; }
+    .cta-link:hover { text-decoration: underline; }
+    /* Big comparison table */
+    .table-wrap { overflow-x: auto; border: 1px solid #1e1e2e; border-radius: 12px; margin-bottom: 4rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; min-width: 820px; }
+    thead th { background: #12121a; color: #e2e8f0; font-weight: 700; padding: 0.75rem 0.875rem; text-align: left; border-bottom: 2px solid #1e1e2e; white-space: nowrap; }
+    thead th:first-child { min-width: 200px; }
+    tbody tr { border-bottom: 1px solid #1e1e2e; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover td { background: rgba(255,255,255,0.015); }
+    tbody td { padding: 0.65rem 0.875rem; color: #94a3b8; }
+    tbody td:first-child { color: #e2e8f0; font-weight: 600; }
+    td.yes { color: #10b981; font-weight: 600; }
+    td.no { color: #f87171; }
+    td.partial { color: #f59e0b; }
+    .category-row td { background: #0f0f1a; color: #64748b !important; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; font-weight: 700 !important; padding: 0.4rem 0.875rem; }
+    .cta-bar { background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.08)); border: 1px solid rgba(124,58,237,0.3); border-radius: 16px; padding: 2.5rem; text-align: center; margin: 0 0 5rem; }
+    .cta-bar h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .cta-bar p { color: #94a3b8; margin-bottom: 1.5rem; }
+    .cta-btn { display: inline-block; background: #7c3aed; color: #fff; padding: 0.75rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+    .cta-btn:hover { background: #6d28d9; }
+    footer { border-top: 1px solid #1e1e2e; padding: 2.5rem 0; color: #64748b; font-size: 0.85rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: #64748b; text-decoration: none; }
+    .footer-links a:hover { color: #a855f7; }
+    .disclaimer { font-size: 0.78rem; color: #475569; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid #1e1e2e">
+  <a href="/" style="font-size:1.1rem;font-weight:700;color:#e2e8f0;text-decoration:none">Flow<span style="color:#a855f7">Stack</span></a>
+  <div style="display:flex;gap:2rem">
+    <a href="/tools" style="color:#a855f7;text-decoration:none;font-size:0.9rem;font-weight:600">Tools</a>
+    <a href="/blog" style="color:#64748b;text-decoration:none;font-size:0.9rem">Blog</a>
+    <a href="/guide" style="color:#64748b;text-decoration:none;font-size:0.9rem">Guide</a>
+  </div>
+  <a href="/#opt-in" style="background:#7c3aed;color:#fff;padding:0.5rem 1.25rem;border-radius:8px;text-decoration:none;font-size:0.875rem;font-weight:600">Free Toolkit</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="hero">
+    <div class="breadcrumb"><a href="/">Home</a> › Tools</div>
+    <h1>AI Workflow Automation Tools</h1>
+    <p>Independent comparison of every major AI workflow tool in 2026 — unsponsored, no affiliate relationships. Updated July 5, 2026.</p>
+    <div class="updated">Last updated: July 5, 2026 · 7 tools reviewed</div>
+  </div>
+
+  <p class="section-label">All Tools at a Glance</p>
+
+  <div class="tool-grid">
+
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div>
+          <div class="tool-card-name">pflow</div>
+          <div class="tool-tagline">AI workflow compiler · CLI</div>
+        </div>
+        <span class="score">9.1</span>
+      </div>
+      <div><span class="tag tag-free">Free forever</span> <span class="tag tag-open">Open-source</span></div>
+      <div class="tool-price"><strong>$0</strong> — free CLI, BYOK for compile step</div>
+      <div class="tool-best"><strong>Best for:</strong> Developers reducing AI agent costs on recurring workflows</div>
+      <a href="/blog/what-is-pflow" class="cta-link">Read deep-dive →</a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div>
+          <div class="tool-card-name">n8n</div>
+          <div class="tool-tagline">Visual workflow automation · Self-hostable</div>
+        </div>
+        <span class="score">8.8</span>
+      </div>
+      <div><span class="tag tag-free">Free (self-host)</span> <span class="tag tag-open">Open-source</span></div>
+      <div class="tool-price"><strong>$0</strong> self-hosted · Cloud from <strong>$20/mo</strong></div>
+      <div class="tool-best"><strong>Best for:</strong> Developers who want visual + code + 400+ integrations</div>
+      <a href="/vs/pflow-vs-n8n" class="cta-link">pflow vs n8n →</a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div>
+          <div class="tool-card-name">Make.com</div>
+          <div class="tool-tagline">Visual no-code automation · SaaS</div>
+        </div>
+        <span class="score">8.4</span>
+      </div>
+      <div><span class="tag tag-free">1,000 ops/mo free</span></div>
+      <div class="tool-price"><strong>$0</strong> free tier · Paid from <strong>$9/mo</strong></div>
+      <div class="tool-best"><strong>Best for:</strong> Non-developers building complex multi-step automations</div>
+      <a href="/vs/pflow-vs-make" class="cta-link">pflow vs Make.com →</a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div>
+          <div class="tool-card-name">Relevance AI</div>
+          <div class="tool-tagline">AI agent teams · No-code</div>
+        </div>
+        <span class="score">8.2</span>
+      </div>
+      <div><span class="tag tag-paid">Limited free</span></div>
+      <div class="tool-price">Paid from <strong>$19/mo</strong></div>
+      <div class="tool-best"><strong>Best for:</strong> Teams building multi-agent AI workflows without code</div>
+      <a href="/blog/best-ai-workflow-tools-2026" class="cta-link">See full ranking →</a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div>
+          <div class="tool-card-name">Pipedream</div>
+          <div class="tool-tagline">Code-first API automation · SaaS</div>
+        </div>
+        <span class="score">7.9</span>
+      </div>
+      <div><span class="tag tag-free">10K credits/mo free</span></div>
+      <div class="tool-price"><strong>$0</strong> free tier · Paid from <strong>$29/mo</strong></div>
+      <div class="tool-best"><strong>Best for:</strong> Developers connecting APIs with inline Node.js/Python</div>
+      <a href="/blog/free-ai-workflow-tools" class="cta-link">Free tools overview →</a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div>
+          <div class="tool-card-name">ActivePieces</div>
+          <div class="tool-tagline">Open-source no-code · Self-hostable</div>
+        </div>
+        <span class="score">7.6</span>
+      </div>
+      <div><span class="tag tag-free">Free (self-host)</span> <span class="tag tag-open">Open-source</span></div>
+      <div class="tool-price"><strong>$0</strong> self-hosted · Cloud pricing varies</div>
+      <div class="tool-best"><strong>Best for:</strong> Teams wanting open-source Zapier with data sovereignty</div>
+      <a href="/blog/free-ai-workflow-tools" class="cta-link">Free tools overview →</a>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-card-top">
+        <div>
+          <div class="tool-card-name">Zapier</div>
+          <div class="tool-tagline">No-code automation · 7,000+ integrations</div>
+        </div>
+        <span class="score">7.3</span>
+      </div>
+      <div><span class="tag tag-paid">100 tasks/mo free</span></div>
+      <div class="tool-price"><strong>$0</strong> free (very limited) · Paid from <strong>$19.99/mo</strong></div>
+      <div class="tool-best"><strong>Best for:</strong> Non-technical users who need the widest app coverage</div>
+      <a href="/vs/pflow-vs-zapier" class="cta-link">pflow vs Zapier →</a>
+    </div>
+
+  </div>
+
+  <p class="section-label">Full Feature Comparison Table</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>pflow</th>
+          <th>n8n</th>
+          <th>Make.com</th>
+          <th>Relevance AI</th>
+          <th>Pipedream</th>
+          <th>ActivePieces</th>
+          <th>Zapier</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="category-row"><td colspan="8">Pricing</td></tr>
+        <tr><td>Free forever option</td><td class="yes">Yes (CLI)</td><td class="yes">Yes (self-host)</td><td class="partial">Limited tier</td><td class="partial">Limited tier</td><td class="partial">Limited tier</td><td class="yes">Yes (self-host)</td><td class="partial">100 tasks/mo</td></tr>
+        <tr><td>Starting paid price</td><td class="yes">$0</td><td>$20/mo</td><td>$9/mo</td><td>$19/mo</td><td>$29/mo</td><td>$0</td><td>$19.99/mo</td></tr>
+        <tr><td>Per-run platform fee</td><td class="yes">None</td><td class="yes">None (self-host)</td><td class="no">Ops-based</td><td class="no">Execution-based</td><td class="partial">Credit-based</td><td class="yes">None (self-host)</td><td class="no">Task-based</td></tr>
+        <tr><td>Free tier volume</td><td class="yes">Unlimited</td><td class="yes">Unlimited (self-host)</td><td>1,000 ops/mo</td><td>Very limited</td><td>10,000 credits/mo</td><td class="yes">Unlimited (self-host)</td><td class="no">100 tasks/mo</td></tr>
+
+        <tr class="category-row"><td colspan="8">Ease of Use</td></tr>
+        <tr><td>Visual / no-code builder</td><td class="no">No — CLI only</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="partial">Partial</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>Beginner-friendly</td><td class="no">No</td><td class="partial">Moderate</td><td class="yes">Yes</td><td class="partial">Moderate</td><td class="partial">Moderate</td><td class="yes">Yes</td><td class="yes">Best in class</td></tr>
+        <tr><td>Developer-friendly</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="partial">Moderate</td><td class="partial">Moderate</td><td class="yes">Yes</td><td class="partial">Moderate</td><td class="no">Limited</td></tr>
+
+        <tr class="category-row"><td colspan="8">AI Capabilities</td></tr>
+        <tr><td>AI workflow compilation</td><td class="yes">Yes — core feature</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+        <tr><td>LLM cost reduction</td><td class="yes">Up to 98%</td><td class="partial">No built-in reduction</td><td class="partial">No built-in reduction</td><td class="partial">Partial caching</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+        <tr><td>Native AI/LLM steps</td><td class="yes">Yes</td><td class="yes">Yes (AI Agent nodes)</td><td class="partial">HTTP + AI add-on</td><td class="yes">Yes — AI-native</td><td class="partial">Via integrations</td><td class="partial">Limited</td><td class="partial">AI Actions add-on</td></tr>
+        <tr><td>Multi-agent support</td><td class="partial">Via compiled flows</td><td class="partial">Partial</td><td class="no">No</td><td class="yes">Yes — core feature</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+
+        <tr class="category-row"><td colspan="8">Integrations</td></tr>
+        <tr><td>Pre-built integrations</td><td class="no">None (custom API)</td><td class="yes">400+</td><td class="yes">1,000+</td><td class="partial">Selected apps</td><td class="yes">1,000+</td><td class="partial">100+</td><td class="yes">7,000+</td></tr>
+        <tr><td>Custom HTTP / API calls</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>Webhook support</td><td class="partial">Via tool calls</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+
+        <tr class="category-row"><td colspan="8">Technical Features</td></tr>
+        <tr><td>Self-hostable</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td>Open-source</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td><td class="partial">Partial</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td>Version control (git)</td><td class="yes">Yes (.pflow.md)</td><td class="partial">Export JSON</td><td class="no">No</td><td class="no">No</td><td class="partial">Partial</td><td class="partial">Partial</td><td class="no">No</td></tr>
+        <tr><td>Built-in scheduler</td><td class="no">External cron</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>Code execution</td><td class="yes">Yes (workflow steps)</td><td class="yes">JS/Python nodes</td><td class="partial">Limited</td><td class="partial">Limited</td><td class="yes">Full JS/Python</td><td class="partial">Limited</td><td class="no">No</td></tr>
+        <tr><td>Data sovereignty</td><td class="yes">Full — runs locally</td><td class="yes">Yes (self-host)</td><td class="no">Cloud only</td><td class="no">Cloud only</td><td class="no">Cloud only</td><td class="yes">Yes (self-host)</td><td class="no">Cloud only</td></tr>
+
+        <tr class="category-row"><td colspan="8">FlowStack Rating</td></tr>
+        <tr><td>Overall score</td><td class="yes">9.1 / 10</td><td class="yes">8.8 / 10</td><td>8.4 / 10</td><td>8.2 / 10</td><td>7.9 / 10</td><td>7.6 / 10</td><td>7.3 / 10</td></tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cta-bar">
+    <h3>Get the Free FlowStack Toolkit</h3>
+    <p>Includes this comparison as a downloadable cheat sheet, plus cost calculators and pflow starter templates.</p>
+    <a href="/#opt-in" class="cta-btn">Get the free toolkit →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <strong style="color:#e2e8f0">Flow<span style="color:#a855f7">Stack</span></strong>
+      <div class="disclaimer">FlowStack is independent. Not affiliated with pflow, Make.com, n8n, or Zapier.</div>
+    </div>
+    <div class="footer-links">
+      <a href="/tools">Tools</a>
+      <a href="/blog">Blog</a>
+      <a href="/guide">Guide</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

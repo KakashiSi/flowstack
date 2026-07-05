@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Cut AI Agent Costs by 98%: The Workflow Compiler Approach</title>
+  <meta name="description" content="LLM reasoning is the biggest cost driver in AI agents. Learn how workflow compilers like pflow eliminate repeated inference — with real cost calculations.">
+  <link rel="canonical" href="https://pflow.org/blog/reduce-ai-agent-costs">
+  <meta property="og:title" content="How to Cut AI Agent Costs by 98%: The Workflow Compiler Approach">
+  <meta property="og:description" content="Why AI agents are expensive and how workflow compilers eliminate repeated LLM inference costs.">
+  <meta property="og:url" content="https://pflow.org/blog/reduce-ai-agent-costs">
+  <meta property="og:type" content="article">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Cut AI Agent Costs by 98%: The Workflow Compiler Approach",
+    "description": "Explains why AI agents are expensive due to repeated LLM reasoning, and how workflow compilers like pflow solve this with a compile-once-run-many model.",
+    "url": "https://pflow.org/blog/reduce-ai-agent-costs",
+    "datePublished": "2026-07-05",
+    "dateModified": "2026-07-05",
+    "author": { "@type": "Organization", "name": "FlowStack" },
+    "publisher": { "@type": "Organization", "name": "FlowStack", "url": "https://pflow.org" }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0a0a0f; color: #e2e8f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; }
+    a { color: #a855f7; }
+    .page-wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+    .hero { padding: 7rem 0 2.5rem; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 1.5rem; }
+    .breadcrumb a { color: #64748b; text-decoration: none; }
+    .breadcrumb a:hover { color: #a855f7; }
+    .tag { display: inline-block; background: rgba(124,58,237,0.15); color: #a855f7; border: 1px solid rgba(168,85,247,0.3); border-radius: 20px; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    .hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+    .hero-meta { font-size: 0.85rem; color: #64748b; margin-bottom: 2rem; }
+    .article { padding-bottom: 5rem; }
+    .article h2 { font-size: 1.35rem; font-weight: 700; margin: 2.5rem 0 0.75rem; color: #e2e8f0; }
+    .article h3 { font-size: 1.08rem; font-weight: 600; margin: 1.75rem 0 0.4rem; color: #cbd5e1; }
+    .article p { margin-bottom: 1.25rem; color: #cbd5e1; }
+    .article ul, .article ol { margin: 0.5rem 0 1.25rem 1.5rem; color: #cbd5e1; }
+    .article li { margin-bottom: 0.4rem; }
+    .article strong { color: #e2e8f0; }
+    .callout { background: rgba(124,58,237,0.1); border-left: 3px solid #7c3aed; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .callout p { margin: 0; color: #c4b5fd; }
+    .callout.green { background: rgba(16,185,129,0.08); border-color: #10b981; }
+    .callout.green p { color: #6ee7b7; }
+    .cost-table { background: #12121a; border: 1px solid #1e1e2e; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
+    .cost-table-header { background: #1a1a2e; padding: 0.75rem 1.25rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; font-weight: 600; }
+    .cost-row { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 0.85rem 1.25rem; border-top: 1px solid #1e1e2e; font-size: 0.9rem; }
+    .cost-row.head { background: #12121a; font-weight: 700; color: #e2e8f0; border-top: none; }
+    .cost-row span:nth-child(2) { text-align: center; }
+    .cost-row span:nth-child(3) { text-align: right; }
+    td.red { color: #f87171; font-weight: 600; }
+    td.green { color: #10b981; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; font-size: 0.88rem; }
+    thead th { background: #12121a; color: #e2e8f0; font-weight: 700; padding: 0.7rem 1rem; text-align: left; border-bottom: 2px solid #1e1e2e; }
+    tbody tr { border-bottom: 1px solid #1e1e2e; }
+    tbody td { padding: 0.65rem 1rem; color: #94a3b8; }
+    .table-wrap { overflow-x: auto; border: 1px solid #1e1e2e; border-radius: 10px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .stat-box { background: #12121a; border: 1px solid #1e1e2e; border-radius: 10px; padding: 1.25rem; text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: #a855f7; }
+    .stat-label { font-size: 0.78rem; color: #64748b; margin-top: 0.25rem; }
+    .cta-bar { background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.08)); border: 1px solid rgba(124,58,237,0.3); border-radius: 16px; padding: 2.5rem; text-align: center; margin: 2rem 0 5rem; }
+    .cta-bar h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .cta-bar p { color: #94a3b8; margin-bottom: 1.5rem; }
+    .cta-btn { display: inline-block; background: #7c3aed; color: #fff; padding: 0.75rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+    .cta-btn:hover { background: #6d28d9; }
+    footer { border-top: 1px solid #1e1e2e; padding: 2.5rem 0; color: #64748b; font-size: 0.85rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: #64748b; text-decoration: none; }
+    .footer-links a:hover { color: #a855f7; }
+    .disclaimer { font-size: 0.78rem; color: #475569; margin-top: 0.5rem; }
+    @media (max-width: 580px) { .stat-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid #1e1e2e">
+  <a href="/" style="font-size:1.1rem;font-weight:700;color:#e2e8f0;text-decoration:none">Flow<span style="color:#a855f7">Stack</span></a>
+  <div style="display:flex;gap:2rem">
+    <a href="/tools" style="color:#64748b;text-decoration:none;font-size:0.9rem">Tools</a>
+    <a href="/blog" style="color:#64748b;text-decoration:none;font-size:0.9rem">Blog</a>
+    <a href="/guide" style="color:#64748b;text-decoration:none;font-size:0.9rem">Guide</a>
+  </div>
+  <a href="/#opt-in" style="background:#7c3aed;color:#fff;padding:0.5rem 1.25rem;border-radius:8px;text-decoration:none;font-size:0.875rem;font-weight:600">Free Toolkit</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="hero">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/blog">Blog</a> › Reduce AI Agent Costs</div>
+    <span class="tag">Cost guide</span>
+    <h1>How to Cut AI Agent Costs by 98%: The Workflow Compiler Approach</h1>
+    <div class="hero-meta">By FlowStack · July 5, 2026 · 10 min read</div>
+  </div>
+
+  <article class="article">
+
+    <p>Every time your AI agent runs, it thinks. It receives context, reasons about what to do, decides which tools to call, and orchestrates a response. That reasoning is powered by large language models — and LLM inference costs money. Run the same workflow 1,000 times a month and you pay for 1,000 rounds of full reasoning, even when the workflow logic never changes.</p>
+
+    <p>There is a better architecture: compile the reasoning once. That is the core idea behind workflow compilers like pflow.</p>
+
+    <div class="stat-grid">
+      <div class="stat-box"><div class="stat-num">98%</div><div class="stat-label">Cost reduction claimed by pflow vs traditional agents</div></div>
+      <div class="stat-box"><div class="stat-num">~$0</div><div class="stat-label">Per-run LLM cost after initial compilation</div></div>
+      <div class="stat-box"><div class="stat-num">1×</div><div class="stat-label">Number of reasoning runs required (upfront)</div></div>
+    </div>
+
+    <h2>Why AI agents are expensive</h2>
+
+    <p>The cost structure of a traditional AI agent looks like this:</p>
+
+    <ul>
+      <li><strong>System prompt tokens</strong> — loaded on every call (often 500–2,000 tokens)</li>
+      <li><strong>Reasoning tokens</strong> — the model thinking through what to do next (often 300–1,500 tokens per step)</li>
+      <li><strong>Tool call handling</strong> — parsing tool outputs and deciding next actions (another 200–800 tokens per step)</li>
+      <li><strong>Multi-step chains</strong> — a 5-step agent workflow multiplies all of the above by 5</li>
+    </ul>
+
+    <p>For a typical customer support agent handling 5,000 tickets per month, LLM reasoning alone can cost hundreds of dollars — before you add the cost of actually generating the responses.</p>
+
+    <h2>The traditional vs compiled cost model</h2>
+
+    <p>Let us use a concrete example: a daily sales report agent. It runs every morning, pulls CRM data, summarises deals, and emails the team. Same workflow every day.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Cost component</th>
+            <th>Traditional agent (per run)</th>
+            <th>Compiled workflow (per run)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Reasoning / routing tokens</td><td class="red" style="color:#f87171">~2,000 tokens @ $0.003/1K = <strong>$0.006</strong></td><td class="green" style="color:#10b981"><strong>$0.000</strong> (pre-compiled)</td></tr>
+          <tr><td>System prompt tokens</td><td style="color:#f59e0b">~1,500 tokens @ $0.003/1K = <strong>$0.0045</strong></td><td style="color:#10b981"><strong>$0.000</strong></td></tr>
+          <tr><td>Tool call parsing</td><td style="color:#f59e0b">~3 steps × 500 tokens = <strong>$0.0045</strong></td><td style="color:#10b981"><strong>$0.000</strong></td></tr>
+          <tr><td>Data summarisation (LLM)</td><td>~800 tokens = <strong>$0.0024</strong></td><td>~800 tokens = <strong>$0.0024</strong></td></tr>
+          <tr><td><strong>Total per run</strong></td><td><strong>~$0.018</strong></td><td><strong>~$0.0024</strong></td></tr>
+          <tr><td><strong>Monthly (30 runs)</strong></td><td><strong>~$0.54</strong></td><td><strong>~$0.072</strong></td></tr>
+          <tr><td><strong>Monthly (1,000 runs)</strong></td><td><strong>~$18.00</strong></td><td><strong>~$2.40</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout green">
+      <p>In this example, a compiled workflow costs approximately <strong>87% less</strong> per run than a traditional agent. For workflows with heavier reasoning steps, the gap widens to the 98% figure pflow reports.</p>
+    </div>
+
+    <h2>What workflow compilation actually does</h2>
+
+    <p>A workflow compiler like pflow treats the reasoning phase the same way a traditional compiler treats source code: it converts high-level logic into a lower-level, more efficient representation that can be executed without re-interpreting the source on every run.</p>
+
+    <h3>Step 1 — Describe the workflow</h3>
+    <p>You write a natural language description of what you want the agent to do. This is your "source code." You run it through the compiler once:</p>
+    <p><code>pflow compile "pull yesterday's closed deals from CRM, summarise by rep, email to team"</code></p>
+
+    <h3>Step 2 — LLM generates the workflow plan (one-time cost)</h3>
+    <p>The compiler calls an LLM to reason through the workflow — what steps are needed, what tools to call, what data flows where. This is the expensive step. It happens once.</p>
+
+    <h3>Step 3 — Compiled .pflow.md is saved</h3>
+    <p>The output is a <code>.pflow.md</code> file: a structured Markdown document containing the full workflow plan with explicit steps, tool calls, and conditionals. You commit it to version control.</p>
+
+    <h3>Step 4 — Execute with near-zero LLM cost</h3>
+    <p>From this point on, running the workflow executes the compiled file directly. The pflow runtime reads the step sequence and executes the tools. LLM calls only happen where genuinely dynamic output is needed — generating the actual email body, for example — not for routing decisions.</p>
+
+    <h2>When does this approach work best?</h2>
+
+    <p>The compile-once model delivers the highest savings on workflows that are:</p>
+
+    <ul>
+      <li><strong>Recurring</strong> — the same logical sequence runs repeatedly (daily, per event, per request)</li>
+      <li><strong>Deterministic in structure</strong> — the workflow steps do not change based on novel inputs</li>
+      <li><strong>High volume</strong> — even a $0.01 per-run saving is significant at 10,000 runs/month</li>
+    </ul>
+
+    <p>It is less useful for:</p>
+
+    <ul>
+      <li>One-off research tasks where the workflow path is genuinely novel each time</li>
+      <li>Exploratory conversations where the agent needs to improvise</li>
+    </ul>
+
+    <h2>Implementing this today with pflow</h2>
+
+    <p>pflow is the most accessible implementation of this approach available today. The CLI is free:</p>
+
+    <p><code>uv tool install pflow-cli</code></p>
+
+    <p>Workflow compilation requires your own LLM API key (OpenAI, Anthropic, or compatible). The compilation cost — a one-time inference call — is typically under $0.05 for most workflows.</p>
+
+    <p>Running compiled workflows costs only what your tool calls cost. No additional LLM fees for routing or reasoning.</p>
+
+    <h2>The bigger picture: AI cost architecture</h2>
+
+    <p>Reducing per-run costs is one dimension of AI cost optimisation. Others include prompt caching (reusing KV cache across calls), model tier selection (using smaller models for simpler steps), and batching. Workflow compilation is the most impactful for recurring agentic workflows because it eliminates entire categories of LLM calls, not just reduces their cost.</p>
+
+    <p>As AI agents move from experimental to production, cost architecture will become as important as functionality. Tools that separate the "think once" phase from the "execute many" phase will define the next generation of efficient AI systems.</p>
+
+    <div class="cta-bar">
+      <h3>Get the Free FlowStack Toolkit</h3>
+      <p>Includes an AI cost calculator, pflow quick-start templates, and a workflow compilation checklist.</p>
+      <a href="/#opt-in" class="cta-btn">Get the free toolkit →</a>
+    </div>
+
+  </article>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <strong style="color:#e2e8f0">Flow<span style="color:#a855f7">Stack</span></strong>
+      <div class="disclaimer">FlowStack is independent. Not affiliated with pflow, Make.com, n8n, or Zapier.</div>
+    </div>
+    <div class="footer-links">
+      <a href="/tools">Tools</a>
+      <a href="/blog">Blog</a>
+      <a href="/guide">Guide</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

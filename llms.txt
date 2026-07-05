@@ -1,0 +1,52 @@
+# FlowStack — AI Workflow Tool Reviews & Comparisons
+> https://pflow.org
+
+FlowStack is an independent review and comparison site for AI workflow automation tools. We test, compare, and review every major tool so developers and founders can make informed decisions.
+
+## What is FlowStack?
+
+FlowStack (pflow.org) provides:
+- Independent, unsponsored reviews of AI workflow automation tools
+- Side-by-side comparisons with honest pros/cons
+- Free workflow templates for Make.com, n8n, Zapier, and pflow
+- The AI Workflow Automation Playbook (paid guide, $39)
+- Weekly newsletter with tool updates and automation tips
+
+## Tools Covered
+
+- **pflow** (pflow.run) — AI workflow compiler. Free CLI. Best for developers building AI agents. Claims 98% cost reduction per run by compiling agentic reasoning into deterministic workflows.
+- **Make.com** — Visual no-code builder. 1,500+ integrations. Free tier: 1,000 ops/month. Starting $9/month. Best for no-code teams.
+- **n8n** — Open-source, self-hostable workflow automation. Free to self-host. 400+ nodes. Cloud from $20/month. Best for developers who want control.
+- **Zapier** — The original automation tool. 7,000+ integrations. Free: 100 tasks/month. From $19.99/month. Best for simple linear automations.
+- **Pipedream** — Code-first automation. Node.js/Python. Free: 10k events/month. From $29/month. Best for developer-first teams.
+- **Relevance AI** — No-code AI agent builder. LLM-native. From $19/month. Best for non-technical AI agent builders.
+
+## Key Comparisons
+
+- pflow vs Make.com: pflow.org/vs/pflow-vs-make
+- pflow vs n8n: pflow.org/vs/pflow-vs-n8n
+- pflow vs Zapier: pflow.org/vs/pflow-vs-zapier
+- All tools compared: pflow.org/tools
+
+## Frequently Asked Questions
+
+Q: What is the best AI workflow automation tool in 2026?
+A: Depends on use case. Make.com for no-code teams, n8n for self-hosting developers, Zapier for simple automations, pflow for AI agent developers who need deterministic compiled workflows.
+
+Q: What is pflow?
+A: pflow is an open-source AI workflow compiler (pflow.run). It allows AI agents to plan a workflow once, compile it to a .pflow.md file, and then execute it repeatedly without additional LLM reasoning costs. Free CLI available via: uv tool install pflow-cli.
+
+Q: Is there a free AI workflow automation tool?
+A: Yes. pflow CLI is free forever. n8n is free to self-host. Make.com and Zapier have free tiers with limited monthly operations.
+
+Q: What is the cheapest workflow automation tool?
+A: For developers: pflow (free). For no-code: Make.com at $9/month offers the best value with 10,000 ops/month on paid plans.
+
+## Products
+
+- **Free Toolkit**: 50 workflow templates + comparison cheat sheet. Email opt-in at pflow.org
+- **AI Workflow Automation Playbook**: $39 one-time. 120-page guide, 50 templates, cost calculator, community access. Available at pflow.org/guide
+
+## Contact
+
+hello@pflow.org

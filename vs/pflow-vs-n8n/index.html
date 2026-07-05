@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pflow vs n8n: Developer Workflow Tools Compared (2026)</title>
+  <meta name="description" content="pflow vs n8n: in-depth comparison of two developer-focused workflow tools. Pricing, AI capabilities, self-hosting, and which to choose for your use case.">
+  <link rel="canonical" href="https://pflow.org/vs/pflow-vs-n8n">
+  <meta property="og:title" content="pflow vs n8n: Developer Workflow Tools Compared (2026)">
+  <meta property="og:description" content="Detailed comparison of pflow and n8n for developers — pricing, AI features, and use cases.">
+  <meta property="og:url" content="https://pflow.org/vs/pflow-vs-n8n">
+  <meta property="og:type" content="article">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "pflow vs n8n: Developer Workflow Tools Compared (2026)",
+    "description": "Independent comparison of pflow and n8n for developers, covering pricing, AI capabilities, self-hosting options, and specific use cases.",
+    "url": "https://pflow.org/vs/pflow-vs-n8n",
+    "datePublished": "2026-07-05",
+    "dateModified": "2026-07-05",
+    "author": { "@type": "Organization", "name": "FlowStack" },
+    "publisher": { "@type": "Organization", "name": "FlowStack", "url": "https://pflow.org" }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0a0a0f; color: #e2e8f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; }
+    a { color: #a855f7; }
+    .page-wrap { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+    .hero { padding: 7rem 0 2.5rem; }
+    .breadcrumb { font-size: 0.8rem; color: #64748b; margin-bottom: 1.5rem; }
+    .breadcrumb a { color: #64748b; text-decoration: none; }
+    .breadcrumb a:hover { color: #a855f7; }
+    .tag { display: inline-block; background: rgba(124,58,237,0.15); color: #a855f7; border: 1px solid rgba(168,85,247,0.3); border-radius: 20px; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    .hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+    .hero-meta { font-size: 0.85rem; color: #64748b; margin-bottom: 2rem; }
+    .article { padding-bottom: 5rem; }
+    .article h2 { font-size: 1.35rem; font-weight: 700; margin: 2.5rem 0 0.75rem; color: #e2e8f0; }
+    .article h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.4rem; color: #cbd5e1; }
+    .article p { margin-bottom: 1.25rem; color: #cbd5e1; }
+    .article ul { margin: 0.5rem 0 1.25rem 1.5rem; color: #cbd5e1; }
+    .article li { margin-bottom: 0.4rem; }
+    .article strong { color: #e2e8f0; }
+    .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+    .vs-card { background: #12121a; border: 1px solid #1e1e2e; border-radius: 12px; padding: 1.5rem; }
+    .vs-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .vs-card.pflow h3 { color: #a855f7; }
+    .vs-card.n8n h3 { color: #ea580c; }
+    .vs-card .subtitle { font-size: 0.8rem; color: #64748b; margin-bottom: 1rem; }
+    .vs-card ul { margin-left: 1.2rem; }
+    .vs-card li { font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.3rem; }
+    .winner-box { background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.3); border-radius: 10px; padding: 1.25rem; margin: 1.5rem 0; }
+    .winner-box h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: #a855f7; font-weight: 700; margin-bottom: 0.4rem; }
+    .winner-box p { margin: 0; color: #c4b5fd; font-size: 0.92rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; font-size: 0.85rem; }
+    thead th { background: #12121a; color: #e2e8f0; font-weight: 700; padding: 0.7rem 0.9rem; text-align: left; border-bottom: 2px solid #1e1e2e; }
+    tbody tr { border-bottom: 1px solid #1e1e2e; }
+    tbody td { padding: 0.65rem 0.9rem; color: #94a3b8; }
+    .table-wrap { overflow-x: auto; border: 1px solid #1e1e2e; border-radius: 10px; }
+    td.yes { color: #10b981; font-weight: 600; }
+    td.no { color: #f87171; }
+    td.partial { color: #f59e0b; }
+    .callout { background: rgba(124,58,237,0.1); border-left: 3px solid #7c3aed; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .callout p { margin: 0; color: #c4b5fd; }
+    .cta-bar { background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.08)); border: 1px solid rgba(124,58,237,0.3); border-radius: 16px; padding: 2.5rem; text-align: center; margin: 2rem 0 5rem; }
+    .cta-bar h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .cta-bar p { color: #94a3b8; margin-bottom: 1.5rem; }
+    .cta-btn { display: inline-block; background: #7c3aed; color: #fff; padding: 0.75rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+    .cta-btn:hover { background: #6d28d9; }
+    footer { border-top: 1px solid #1e1e2e; padding: 2.5rem 0; color: #64748b; font-size: 0.85rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: #64748b; text-decoration: none; }
+    .footer-links a:hover { color: #a855f7; }
+    .disclaimer { font-size: 0.78rem; color: #475569; margin-top: 0.5rem; }
+    @media (max-width: 580px) { .vs-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid #1e1e2e">
+  <a href="/" style="font-size:1.1rem;font-weight:700;color:#e2e8f0;text-decoration:none">Flow<span style="color:#a855f7">Stack</span></a>
+  <div style="display:flex;gap:2rem">
+    <a href="/tools" style="color:#64748b;text-decoration:none;font-size:0.9rem">Tools</a>
+    <a href="/blog" style="color:#64748b;text-decoration:none;font-size:0.9rem">Blog</a>
+    <a href="/guide" style="color:#64748b;text-decoration:none;font-size:0.9rem">Guide</a>
+  </div>
+  <a href="/#opt-in" style="background:#7c3aed;color:#fff;padding:0.5rem 1.25rem;border-radius:8px;text-decoration:none;font-size:0.875rem;font-weight:600">Free Toolkit</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="hero">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/blog">Blog</a> › pflow vs n8n</div>
+    <span class="tag">vs</span>
+    <h1>pflow vs n8n: Developer Workflow Tools Compared (2026)</h1>
+    <div class="hero-meta">By FlowStack · July 5, 2026 · 9 min read · Independent review</div>
+  </div>
+
+  <article class="article">
+
+    <p>Both pflow and n8n target developers who want more control over their automation workflows. But they approach the problem from very different angles. n8n is a mature, visual workflow builder with 400+ integrations that you can self-host for free. pflow is a newer workflow compiler that converts agentic AI reasoning into deterministic, cost-efficient pipeline files. This comparison breaks down which fits your use case.</p>
+
+    <div class="vs-grid">
+      <div class="vs-card pflow">
+        <h3>pflow</h3>
+        <div class="subtitle">AI workflow compiler · CLI tool</div>
+        <ul>
+          <li>Free forever, no usage caps</li>
+          <li>Compile agentic reasoning once</li>
+          <li>98% cost reduction claim on re-runs</li>
+          <li>Output: .pflow.md files (git-friendly)</li>
+          <li>Requires: uv + LLM API key</li>
+        </ul>
+      </div>
+      <div class="vs-card n8n">
+        <h3>n8n</h3>
+        <div class="subtitle">Visual workflow automation · Self-hostable</div>
+        <ul>
+          <li>Free self-hosted; cloud from $20/mo</li>
+          <li>400+ native integrations</li>
+          <li>Visual node editor + code nodes</li>
+          <li>AI Agent nodes with LLM support</li>
+          <li>Active open-source community</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Feature comparison</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Feature</th><th>pflow</th><th>n8n</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Free to use</td><td class="yes">Yes — forever</td><td class="yes">Yes — self-hosted</td></tr>
+          <tr><td>Visual editor</td><td class="no">No — CLI only</td><td class="yes">Yes — visual + code</td></tr>
+          <tr><td>App integrations</td><td class="partial">Custom via tool calls</td><td class="yes">400+ native integrations</td></tr>
+          <tr><td>AI workflow compilation</td><td class="yes">Yes — core feature</td><td class="no">No</td></tr>
+          <tr><td>LLM cost reduction</td><td class="yes">Up to 98% (compiled)</td><td class="partial">No — runs LLM on each call</td></tr>
+          <tr><td>Code nodes (JS/Python)</td><td class="partial">Workflow steps are code</td><td class="yes">Full JS/Python code nodes</td></tr>
+          <tr><td>Self-hostable</td><td class="yes">Yes (CLI + open-source)</td><td class="yes">Yes (Docker/npm)</td></tr>
+          <tr><td>Version control</td><td class="yes">Git-native (.pflow.md)</td><td class="partial">Export JSON, not git-native</td></tr>
+          <tr><td>Scheduling</td><td class="partial">External cron</td><td class="yes">Built-in cron scheduler</td></tr>
+          <tr><td>Webhooks</td><td class="partial">Via tool calls</td><td class="yes">Native webhook nodes</td></tr>
+          <tr><td>Database support</td><td class="partial">Via tool calls</td><td class="yes">Native DB nodes (Postgres, MySQL, etc.)</td></tr>
+          <tr><td>Community/ecosystem</td><td class="partial">Early stage</td><td class="yes">Large, established</td></tr>
+          <tr><td>Managed cloud option</td><td class="no">No</td><td class="yes">Yes — $20+/month</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>The core philosophical difference</h2>
+
+    <p>n8n is a <strong>workflow orchestrator</strong>: you visually connect nodes that represent actions (call API, transform data, send email), and n8n executes them in sequence on every trigger. The workflow logic lives in the node graph.</p>
+
+    <p>pflow is a <strong>workflow compiler</strong>: you describe what you want in natural language, an LLM compiles the workflow once into a .pflow.md file, and subsequent runs execute that compiled plan without re-invoking LLM reasoning for routing decisions. The workflow logic lives in a plain text file you can read, edit, and version-control.</p>
+
+    <div class="callout">
+      <p>The practical implication: n8n runs the same execution path on every trigger. pflow runs a compiled path that was designed by an LLM once — then locks it in for near-zero-cost repeated execution.</p>
+    </div>
+
+    <h2>Pricing</h2>
+
+    <p><strong>pflow</strong> is free. No subscription, no per-execution fees. The CLI installs via <code>uv tool install pflow-cli</code>. The only cost is your own LLM API key used during the one-time compilation step.</p>
+
+    <p><strong>n8n</strong> self-hosted is also free — run it on your own VPS (a $6/month instance is sufficient for light loads). The managed cloud version starts at $20/month for 2,500 workflow executions. For teams needing more executions or priority support, plans scale to $50+/month.</p>
+
+    <h2>AI capabilities</h2>
+
+    <p>This is where the tools diverge most significantly.</p>
+
+    <p><strong>pflow</strong> is AI-native by design. The entire tool exists to manage AI workflow costs through compilation. It produces deterministic workflow representations of what would otherwise be unpredictable agentic reasoning.</p>
+
+    <p><strong>n8n</strong> added AI Agent nodes in recent versions, allowing you to embed LLM calls, tool use, and memory into workflows. It is a capable addition — but AI is layered on top of n8n's core architecture, not central to it. n8n does not reduce LLM costs through compilation; each run calls the LLM fresh.</p>
+
+    <h2>When to choose pflow</h2>
+    <ul>
+      <li>Your primary goal is reducing LLM costs on recurring AI pipelines</li>
+      <li>You want workflows stored in plain text files in your git repository</li>
+      <li>You are building AI-first workflows that do not need 400+ pre-built connectors</li>
+      <li>You prefer a lightweight CLI over a running server</li>
+    </ul>
+
+    <div class="winner-box">
+      <h4>pflow wins for</h4>
+      <p>AI-heavy recurring workflows where compiled execution offers dramatic cost savings. No server to maintain — just a CLI and a .pflow.md file.</p>
+    </div>
+
+    <h2>When to choose n8n</h2>
+    <ul>
+      <li>You need pre-built integrations with 400+ apps out of the box</li>
+      <li>Your team is mixed technical/non-technical and needs a visual editor</li>
+      <li>You need native scheduling, webhooks, and database nodes</li>
+      <li>You want to run long-term, self-hosted automation infrastructure</li>
+      <li>AI is one part of your workflow, not the whole workflow</li>
+    </ul>
+
+    <div class="winner-box" style="background:rgba(234,88,12,0.08);border-color:rgba(234,88,12,0.3)">
+      <h4 style="color:#ea580c">n8n wins for</h4>
+      <p style="color:#fed7aa">General-purpose workflow automation requiring broad integration coverage and a mature visual builder. The self-hosted free tier makes it unbeatable value for teams who can manage a server.</p>
+    </div>
+
+    <h2>Verdict: can you use both?</h2>
+
+    <p>Absolutely. A common pattern is using n8n for the orchestration layer (triggering workflows, handling webhooks, syncing data between apps) and pflow for any steps that involve AI agent reasoning. n8n can call pflow via a command-line execution node, effectively acting as the scheduler and trigger while pflow handles the AI logic cheaply.</p>
+
+    <div class="cta-bar">
+      <h3>Get the Free FlowStack Toolkit</h3>
+      <p>Includes pflow + n8n setup guides, integration templates, and an AI cost calculator.</p>
+      <a href="/#opt-in" class="cta-btn">Get the free toolkit →</a>
+    </div>
+
+  </article>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <strong style="color:#e2e8f0">Flow<span style="color:#a855f7">Stack</span></strong>
+      <div class="disclaimer">FlowStack is independent. Not affiliated with pflow, Make.com, n8n, or Zapier.</div>
+    </div>
+    <div class="footer-links">
+      <a href="/tools">Tools</a>
+      <a href="/blog">Blog</a>
+      <a href="/guide">Guide</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
