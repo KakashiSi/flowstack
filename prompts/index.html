@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 Free ChatGPT Prompts That Actually Make Money — FlowStack</title>
+  <meta name="description" content="Get the 5 ChatGPT prompts used to build AI-powered content businesses. Free instant download, no credit card.">
+  <link rel="canonical" href="https://pflow.org/prompts">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #21262d;
+      --gold: #d4a017; --gold-light: #f0c040;
+      --text: #e6edf3; --muted: #8b949e; --green: #3fb950;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; min-height: 100vh; }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 56px;
+      background: rgba(13,17,23,.9); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-size: 1rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-back { font-size: .85rem; color: var(--muted); text-decoration: none; }
+    .nav-back:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      text-align: center; padding: 5rem 1.5rem 3rem;
+      background: radial-gradient(ellipse at 50% 0%, rgba(212,160,23,.08) 0%, transparent 70%);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(212,160,23,.12); border: 1px solid rgba(212,160,23,.3);
+      color: var(--gold-light); padding: .3rem 1rem; border-radius: 999px;
+      font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800;
+      line-height: 1.15; letter-spacing: -.02em; margin-bottom: 1.25rem;
+    }
+    h1 em { font-style: normal; color: var(--gold-light); }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--muted);
+      max-width: 500px; margin: 0 auto 2.5rem;
+    }
+
+    /* FORM BOX */
+    .form-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2.5rem;
+      max-width: 480px; margin: 0 auto 2rem;
+      position: relative;
+    }
+    .form-box::before {
+      content: ''; position: absolute; inset: -1px; border-radius: 16px;
+      background: linear-gradient(135deg, rgba(212,160,23,.3), transparent 60%);
+      z-index: -1;
+    }
+    .form-label { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: .75rem; display: block; }
+    .form-title { font-size: 1.25rem; font-weight: 700; margin-bottom: .5rem; }
+    .form-desc { font-size: .85rem; color: var(--muted); margin-bottom: 1.5rem; }
+
+    .includes { list-style: none; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: .4rem; }
+    .includes li { font-size: .875rem; display: flex; align-items: flex-start; gap: .5rem; }
+    .includes li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+    .input-row { display: flex; gap: .625rem; flex-wrap: wrap; }
+    .input-row input {
+      flex: 1; min-width: 180px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: .75rem 1rem;
+      color: var(--text); font-size: .9rem; outline: none;
+    }
+    .input-row input:focus { border-color: var(--gold); }
+    .input-row input::placeholder { color: var(--muted); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #000; border: none; border-radius: 8px;
+      padding: .75rem 1.25rem; font-size: .875rem; font-weight: 700;
+      cursor: pointer; white-space: nowrap; transition: opacity .2s;
+    }
+    .btn-gold:hover { opacity: .9; }
+    .form-note { font-size: .72rem; color: var(--muted); margin-top: .75rem; text-align: center; }
+
+    /* WHAT'S INSIDE */
+    .section { max-width: 700px; margin: 0 auto; padding: 3rem 1.5rem; }
+    h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; }
+
+    .prompts-grid { display: flex; flex-direction: column; gap: .875rem; }
+    .prompt-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .prompt-num {
+      background: rgba(212,160,23,.15); color: var(--gold);
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 700; flex-shrink: 0;
+    }
+    .prompt-title { font-weight: 600; margin-bottom: .25rem; }
+    .prompt-desc { font-size: .85rem; color: var(--muted); line-height: 1.5; }
+
+    /* BRIDGE TO FLOWSTACK */
+    .bridge {
+      background: linear-gradient(135deg, rgba(124,58,237,.1), rgba(168,85,247,.05));
+      border: 1px solid rgba(124,58,237,.2); border-radius: 14px;
+      padding: 2rem; text-align: center; margin: 2rem auto; max-width: 700px;
+    }
+    .bridge h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+    .bridge p { color: var(--muted); font-size: .9rem; margin-bottom: 1.25rem; }
+    .btn-purple {
+      display: inline-block; background: #7c3aed; color: #fff;
+      padding: .65rem 1.5rem; border-radius: 8px; font-weight: 600;
+      font-size: .875rem; text-decoration: none;
+    }
+    .btn-purple:hover { opacity: .9; }
+
+    footer {
+      padding: 2rem 1.5rem; text-align: center;
+      color: var(--muted); font-size: .75rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Flow<span>Stack</span></a>
+  <a href="/" class="nav-back">← All AI Tools</a>
+</nav>
+
+<div class="hero">
+  <div class="badge">✦ Free Today — Normally $37</div>
+  <h1>Steal The 5 ChatGPT Prompts<br>I Use To Make <em>$200+ A Day</em> Online</h1>
+  <p class="hero-sub">Copy. Paste. Profit. No tools, no coding, no experience needed.</p>
+
+  <div class="form-box">
+    <span class="form-label">Free Instant Download</span>
+    <div class="form-title">Get Your Free Prompt Pack</div>
+    <div class="form-desc">Delivered to your inbox in 60 seconds. No credit card.</div>
+    <ul class="includes">
+      <li>The Niche Goldmine Finder — profitable markets in 60 seconds</li>
+      <li>The Faceless Content Engine — 30 viral video scripts</li>
+      <li>The Affiliate Review Article — 1,500-word SEO posts</li>
+      <li>The Cold DM That Books Calls — 30%+ reply rate</li>
+      <li>The Digital Product Validator — full concept + sales copy</li>
+    </ul>
+    <form class="input-row" onsubmit="handleSubmit(event)">
+      <input type="email" id="email-input" placeholder="your@email.com" required>
+      <button type="submit" class="btn-gold">SEND ME THE 5 PROMPTS →</button>
+    </form>
+    <p class="form-note">Free while in early access. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<!-- WHAT'S INSIDE -->
+<div class="section">
+  <h2>What's Inside Your Free Pack</h2>
+  <div class="prompts-grid">
+    <div class="prompt-card">
+      <div class="prompt-num">1</div>
+      <div>
+        <div class="prompt-title">The Niche Goldmine Finder</div>
+        <div class="prompt-desc">Discover profitable, underserved markets in 60 seconds flat. Find your niche before writing a single word.</div>
+      </div>
+    </div>
+    <div class="prompt-card">
+      <div class="prompt-num">2</div>
+      <div>
+        <div class="prompt-title">The Faceless Content Engine</div>
+        <div class="prompt-desc">Generate 30 viral video scripts with a single paste. No face, no voice, no camera required.</div>
+      </div>
+    </div>
+    <div class="prompt-card">
+      <div class="prompt-num">3</div>
+      <div>
+        <div class="prompt-title">The Affiliate Review Article</div>
+        <div class="prompt-desc">1,500-word SEO posts that rank and convert — hands-free. Paste, publish, earn commissions.</div>
+      </div>
+    </div>
+    <div class="prompt-card">
+      <div class="prompt-num">4</div>
+      <div>
+        <div class="prompt-title">The Cold DM That Books Calls</div>
+        <div class="prompt-desc">30%+ reply rate cold outreach, built by AI. Turn strangers into clients without awkward pitching.</div>
+      </div>
+    </div>
+    <div class="prompt-card">
+      <div class="prompt-num">5</div>
+      <div>
+        <div class="prompt-title">The Digital Product Validator</div>
+        <div class="prompt-desc">Full product concept + sales page copy in one prompt. Know if your idea will sell before building it.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BRIDGE TO FLOWSTACK -->
+<div class="bridge">
+  <h3>Want to Automate These Workflows?</h3>
+  <p>Once you have the prompts — automate them with AI workflow tools. Compare Make.com, n8n, Zapier, and pflow for free.</p>
+  <a href="/" class="btn-purple">Compare AI Workflow Tools →</a>
+</div>
+
+<footer>
+  <p>© 2026 FlowStack (pflow.org) · <a href="mailto:hello@pflow.org">hello@pflow.org</a></p>
+  <p style="margin-top:.35rem;font-size:.7rem">Earnings disclaimer: Results vary and depend on your effort and experience. Any references to earnings are illustrative and not typical.</p>
+</footer>
+
+<script>
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button');
+  const email = form.querySelector('input[type="email"]').value;
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  try {
+    const r = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    if (r.ok) {
+      form.closest('.form-box').innerHTML = '<p style="color:#3fb950;font-weight:700;font-size:1.1rem;text-align:center;padding:1rem">✓ Check your inbox — prompts on their way!</p>';
+    } else { btn.textContent = 'Try again'; btn.disabled = false; }
+  } catch { btn.textContent = 'Try again'; btn.disabled = false; }
+}
+</script>
+
+</body>
+</html>
