@@ -1,0 +1,55 @@
+name: Daily Content Pipeline
+
+on:
+  schedule:
+    - cron: '0 8 * * *'   # Every day at 08:00 UTC (10:00 CET)
+  workflow_dispatch:        # Manual trigger via GitHub UI
+
+jobs:
+  generate-content:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Generate article
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-article.mjs
+
+      - name: Commit and push
+        run: |
+          git config --global user.name "FlowStack Bot"
+          git config --global user.email "bot@pflow.org"
+          git add -A
+          git diff --staged --quiet || git commit -m "content: auto-publish $(date +%Y-%m-%d)"
+          git push
+
+  submit-index:
+    runs-on: ubuntu-latest
+    needs: generate-content
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Submit to indexer
+        env:
+          SPEEDYINDEX_API_KEY: ${{ secrets.SPEEDYINDEX_API_KEY }}
+        run: node scripts/speedyindex-daily.mjs
+        continue-on-error: true

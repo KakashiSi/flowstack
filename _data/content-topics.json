@@ -1,0 +1,328 @@
+{
+  "blog": [
+    {
+      "slug": "make-com-alternatives-2026",
+      "title": "7 Best Make.com Alternatives in 2026 (Free & Paid)",
+      "description": "Independent comparison of the best Make.com alternatives including n8n, Zapier, pflow, and Pipedream.",
+      "keywords": [
+        "make.com alternative",
+        "make alternative",
+        "integromat alternative"
+      ],
+      "done": true,
+      "publishedAt": "2026-07-05"
+    },
+    {
+      "slug": "n8n-alternatives-2026",
+      "title": "Best n8n Alternatives in 2026: Ranked by Developers",
+      "description": "Honest comparison of n8n alternatives — from no-code tools to AI-native workflow compilers.",
+      "keywords": [
+        "n8n alternative",
+        "n8n self-host alternative",
+        "open source workflow automation"
+      ],
+      "done": false
+    },
+    {
+      "slug": "zapier-alternatives-2026",
+      "title": "10 Zapier Alternatives That Are Actually Cheaper (2026)",
+      "description": "Cut your automation bill with these Zapier alternatives — includes free tiers, pricing breakdown, and migration tips.",
+      "keywords": [
+        "zapier alternative",
+        "zapier cheaper",
+        "zapier replacement"
+      ],
+      "done": false
+    },
+    {
+      "slug": "best-workflow-tools-for-developers",
+      "title": "Best AI Workflow Automation Tools for Developers in 2026",
+      "description": "Developer-focused comparison: CLI tools, self-hosted options, code-first platforms, and AI-native compilers.",
+      "keywords": [
+        "workflow automation developers",
+        "developer workflow tool",
+        "code-first automation"
+      ],
+      "done": false
+    },
+    {
+      "slug": "no-code-ai-automation-tools",
+      "title": "Best No-Code AI Automation Tools in 2026",
+      "description": "Complete guide to no-code AI automation: Make.com, Zapier, Relevance AI, and newer entrants compared.",
+      "keywords": [
+        "no-code ai automation",
+        "no-code workflow",
+        "ai automation no code"
+      ],
+      "done": false
+    },
+    {
+      "slug": "workflow-automation-cost-comparison",
+      "title": "AI Workflow Automation Pricing: Full Cost Breakdown (2026)",
+      "description": "Exact monthly costs for Make.com, n8n, Zapier, pflow, Pipedream, and Relevance AI — with real usage scenarios.",
+      "keywords": [
+        "workflow automation pricing",
+        "make.com pricing",
+        "zapier pricing comparison"
+      ],
+      "done": false
+    },
+    {
+      "slug": "ai-workflow-templates-guide",
+      "title": "50 AI Workflow Automation Templates You Can Use Today",
+      "description": "Copy-paste workflow templates for Make.com, n8n, Zapier, and pflow — organized by use case.",
+      "keywords": [
+        "workflow automation templates",
+        "make.com templates",
+        "n8n templates"
+      ],
+      "done": false
+    },
+    {
+      "slug": "how-to-automate-business-with-ai",
+      "title": "How to Automate Your Business With AI in 2026: A Practical Guide",
+      "description": "Step-by-step guide to business automation with AI tools — from choosing a platform to deploying your first workflow.",
+      "keywords": [
+        "automate business with ai",
+        "business automation guide",
+        "ai workflow business"
+      ],
+      "done": false
+    },
+    {
+      "slug": "workflow-compiler-explained",
+      "title": "What is a Workflow Compiler? How AI Compiles Workflows to Save 98% on LLM Costs",
+      "description": "Clear explanation of workflow compilation — how it differs from traditional automation and why it matters for AI agents.",
+      "keywords": [
+        "workflow compiler",
+        "ai workflow compiler",
+        "compiled workflow ai"
+      ],
+      "done": false
+    },
+    {
+      "slug": "deterministic-ai-workflows",
+      "title": "Deterministic vs Agentic AI Workflows: When to Use Each",
+      "description": "When to use compiled deterministic workflows vs live agentic reasoning — with real examples and cost comparisons.",
+      "keywords": [
+        "deterministic ai workflow",
+        "agentic workflow",
+        "ai agent automation"
+      ],
+      "done": false
+    },
+    {
+      "slug": "ai-automation-use-cases-2026",
+      "title": "30 Real-World AI Workflow Automation Use Cases (2026)",
+      "description": "Practical examples of AI workflow automation across marketing, sales, dev ops, finance, and content creation.",
+      "keywords": [
+        "ai automation use cases",
+        "workflow automation examples",
+        "ai workflow examples"
+      ],
+      "done": false
+    },
+    {
+      "slug": "open-source-workflow-automation",
+      "title": "Best Open-Source Workflow Automation Tools in 2026",
+      "description": "Complete list of open-source automation tools: n8n, pflow, ActivePieces, Node-RED, Temporal — compared.",
+      "keywords": [
+        "open source workflow automation",
+        "free workflow automation",
+        "n8n open source"
+      ],
+      "done": false
+    },
+    {
+      "slug": "make-com-pricing-guide",
+      "title": "Make.com Pricing Guide 2026: Is It Worth It? (Honest Review)",
+      "description": "Full breakdown of Make.com plans, operation costs, and when to upgrade — or switch to a cheaper alternative.",
+      "keywords": [
+        "make.com pricing",
+        "make.com cost",
+        "make.com plans"
+      ],
+      "done": false
+    },
+    {
+      "slug": "self-hosted-workflow-automation",
+      "title": "Self-Hosted Workflow Automation: n8n, pflow, and ActivePieces Compared",
+      "description": "Guide to running workflow automation on your own infrastructure — privacy, cost, and control benefits.",
+      "keywords": [
+        "self-hosted workflow automation",
+        "self-host n8n",
+        "self-hosted automation"
+      ],
+      "done": false
+    },
+    {
+      "slug": "ai-agent-cost-optimization",
+      "title": "How to Cut AI Agent Running Costs by 80%: A Practical Guide",
+      "description": "Concrete strategies to reduce LLM API costs in AI agent systems — caching, batching, compiled workflows, model selection.",
+      "keywords": [
+        "ai agent cost",
+        "reduce llm costs",
+        "ai agent optimization"
+      ],
+      "done": false
+    },
+    {
+      "slug": "zapier-pricing-too-expensive",
+      "title": "Zapier Too Expensive? Here Are Your Best Options in 2026",
+      "description": "Zapier alternatives when costs spiral — with exact pricing comparisons and migration difficulty ratings.",
+      "keywords": [
+        "zapier too expensive",
+        "zapier pricing high",
+        "switch from zapier"
+      ],
+      "done": false
+    },
+    {
+      "slug": "pipedream-review-2026",
+      "title": "Pipedream Review 2026: Is It the Best Developer Automation Tool?",
+      "description": "In-depth Pipedream review — pricing, features, limitations, and how it compares to pflow and n8n.",
+      "keywords": [
+        "pipedream review",
+        "pipedream 2026",
+        "pipedream alternative"
+      ],
+      "done": false
+    },
+    {
+      "slug": "relevance-ai-review-2026",
+      "title": "Relevance AI Review 2026: The Best No-Code AI Agent Builder?",
+      "description": "Honest review of Relevance AI — who it's for, what it costs, and when to choose it over Make.com or n8n.",
+      "keywords": [
+        "relevance ai review",
+        "relevance ai 2026",
+        "no-code ai agent"
+      ],
+      "done": false
+    }
+  ],
+  "vs": [
+    {
+      "slug": "make-vs-n8n",
+      "tool1": "Make.com",
+      "tool2": "n8n",
+      "title": "Make.com vs n8n: Which Workflow Tool is Better in 2026?",
+      "description": "Detailed comparison of Make.com and n8n — pricing, ease of use, self-hosting, and which to choose.",
+      "keywords": [
+        "make.com vs n8n",
+        "make vs n8n",
+        "integromat vs n8n"
+      ],
+      "done": false
+    },
+    {
+      "slug": "make-vs-zapier",
+      "tool1": "Make.com",
+      "tool2": "Zapier",
+      "title": "Make.com vs Zapier: Which is Cheaper and Better? (2026)",
+      "description": "Head-to-head comparison of Make.com vs Zapier — operations, pricing, integrations, and migration guide.",
+      "keywords": [
+        "make.com vs zapier",
+        "make vs zapier",
+        "integromat vs zapier"
+      ],
+      "done": false
+    },
+    {
+      "slug": "n8n-vs-zapier",
+      "tool1": "n8n",
+      "tool2": "Zapier",
+      "title": "n8n vs Zapier: The Developer's Honest Comparison (2026)",
+      "description": "n8n vs Zapier — open source vs hosted, pricing, integrations, and which tool wins for developers.",
+      "keywords": [
+        "n8n vs zapier",
+        "n8n zapier comparison"
+      ],
+      "done": false
+    },
+    {
+      "slug": "pipedream-vs-make",
+      "tool1": "Pipedream",
+      "tool2": "Make.com",
+      "title": "Pipedream vs Make.com: Code-First vs No-Code Automation (2026)",
+      "description": "Pipedream vs Make.com — developer experience, pricing, and which platform fits your team's workflow.",
+      "keywords": [
+        "pipedream vs make",
+        "pipedream vs make.com",
+        "pipedream make comparison"
+      ],
+      "done": false
+    },
+    {
+      "slug": "pipedream-vs-n8n",
+      "tool1": "Pipedream",
+      "tool2": "n8n",
+      "title": "Pipedream vs n8n: Best Developer Workflow Tool in 2026?",
+      "description": "Pipedream vs n8n — both developer-first, but very different. Full comparison with pricing and use cases.",
+      "keywords": [
+        "pipedream vs n8n",
+        "n8n pipedream"
+      ],
+      "done": false
+    },
+    {
+      "slug": "pflow-vs-pipedream",
+      "tool1": "pflow",
+      "tool2": "Pipedream",
+      "title": "pflow vs Pipedream: AI Workflow Compiler vs Event-Driven Automation",
+      "description": "pflow vs Pipedream — two developer tools with very different philosophies. Which fits your AI agent stack?",
+      "keywords": [
+        "pflow vs pipedream",
+        "pflow pipedream comparison"
+      ],
+      "done": false
+    },
+    {
+      "slug": "pflow-vs-relevance-ai",
+      "tool1": "pflow",
+      "tool2": "Relevance AI",
+      "title": "pflow vs Relevance AI: CLI Compiler vs No-Code Agent Builder (2026)",
+      "description": "pflow targets developers with compiled workflows; Relevance AI targets non-technical AI agent builders. Full comparison.",
+      "keywords": [
+        "pflow vs relevance ai",
+        "pflow relevance ai"
+      ],
+      "done": false
+    },
+    {
+      "slug": "activepieces-vs-n8n",
+      "tool1": "ActivePieces",
+      "tool2": "n8n",
+      "title": "ActivePieces vs n8n: Which Open-Source Tool is Better in 2026?",
+      "description": "Two open-source workflow automation tools compared — ActivePieces vs n8n on features, community, and ease of self-hosting.",
+      "keywords": [
+        "activepieces vs n8n",
+        "activepieces n8n comparison"
+      ],
+      "done": false
+    },
+    {
+      "slug": "activepieces-vs-zapier",
+      "tool1": "ActivePieces",
+      "tool2": "Zapier",
+      "title": "ActivePieces vs Zapier: Free Open-Source vs Paid SaaS (2026)",
+      "description": "ActivePieces is free and open-source. Zapier is paid and hosted. Which is right for your team?",
+      "keywords": [
+        "activepieces vs zapier",
+        "activepieces zapier"
+      ],
+      "done": false
+    },
+    {
+      "slug": "make-vs-activepieces",
+      "tool1": "Make.com",
+      "tool2": "ActivePieces",
+      "title": "Make.com vs ActivePieces: Paid vs Free Automation in 2026",
+      "description": "Make.com's visual no-code builder vs ActivePieces' open-source platform — cost, features, and migration.",
+      "keywords": [
+        "make.com vs activepieces",
+        "make activepieces"
+      ],
+      "done": false
+    }
+  ]
+}
