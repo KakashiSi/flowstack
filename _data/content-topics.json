@@ -21,7 +21,8 @@
         "n8n self-host alternative",
         "open source workflow automation"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-06"
     },
     {
       "slug": "zapier-alternatives-2026",
