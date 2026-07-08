@@ -33,7 +33,8 @@
         "zapier cheaper",
         "zapier replacement"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-08"
     },
     {
       "slug": "best-workflow-tools-for-developers",
