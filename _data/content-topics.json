@@ -45,7 +45,8 @@
         "developer workflow tool",
         "code-first automation"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-09"
     },
     {
       "slug": "no-code-ai-automation-tools",
