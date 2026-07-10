@@ -229,7 +229,8 @@
         "make vs zapier",
         "integromat vs zapier"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-10"
     },
     {
       "slug": "n8n-vs-zapier",
