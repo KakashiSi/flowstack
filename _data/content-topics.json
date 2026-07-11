@@ -57,7 +57,8 @@
         "no-code workflow",
         "ai automation no code"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-11"
     },
     {
       "slug": "workflow-automation-cost-comparison",
