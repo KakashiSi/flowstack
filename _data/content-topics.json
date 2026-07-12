@@ -69,7 +69,8 @@
         "make.com pricing",
         "zapier pricing comparison"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-12"
     },
     {
       "slug": "ai-workflow-templates-guide",
