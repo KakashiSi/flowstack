@@ -81,7 +81,8 @@
         "make.com templates",
         "n8n templates"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-14"
     },
     {
       "slug": "how-to-automate-business-with-ai",
