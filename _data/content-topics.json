@@ -93,7 +93,8 @@
         "business automation guide",
         "ai workflow business"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-15"
     },
     {
       "slug": "workflow-compiler-explained",
