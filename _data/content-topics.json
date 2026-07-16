@@ -260,7 +260,8 @@
         "pipedream vs make.com",
         "pipedream make comparison"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-16"
     },
     {
       "slug": "pipedream-vs-n8n",

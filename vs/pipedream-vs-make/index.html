@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipedream vs Make.com: Code-First vs No-Code Automation (2026) — FlowStack</title>
+  <meta name="description" content="Pipedream vs Make.com — developer experience, pricing, and which platform fits your team's workflow.">
+  <link rel="canonical" href="https://pflow.org/vs/pipedream-vs-make">
+  <meta property="og:title" content="Pipedream vs Make.com: Code-First vs No-Code Automation (2026)">
+  <meta property="og:description" content="Pipedream vs Make.com — developer experience, pricing, and which platform fits your team's workflow.">
+  <meta property="og:url" content="https://pflow.org/vs/pipedream-vs-make">
+  <meta property="og:type" content="article">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Pipedream vs Make.com: Code-First vs No-Code Automation (2026)","description":"Pipedream vs Make.com — developer experience, pricing, and which platform fits your team's workflow.","datePublished":"2026-07-16","dateModified":"2026-07-16","author":{"@type":"Organization","name":"FlowStack","url":"https://pflow.org"},"publisher":{"@type":"Organization","name":"FlowStack","url":"https://pflow.org"},"url":"https://pflow.org/vs/pipedream-vs-make","inLanguage":"en"}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0a0f;--surface:#13131a;--border:#1e1e2e;--accent:#7c3aed;--accent-light:#a855f7;--green:#10b981;--text:#e2e8f0;--muted:#64748b;--card:#16161f}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.7}
+    a{color:var(--accent-light);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav-logo{font-size:1.1rem;font-weight:700;color:var(--text);text-decoration:none}
+    .nav-logo span{color:var(--accent-light)}
+    .nav-links{display:flex;gap:2rem}
+    .nav-links a{color:var(--muted);font-size:0.9rem}
+    .nav-links a:hover{color:var(--text);text-decoration:none}
+    .nav-cta{background:var(--accent);color:#fff;padding:.5rem 1.25rem;border-radius:8px;font-size:.875rem;font-weight:600}
+    .nav-cta:hover{text-decoration:none;opacity:.9}
+
+    .page{max-width:820px;margin:0 auto;padding:5rem 1.5rem 4rem}
+
+    .breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:2rem;display:flex;gap:.5rem;align-items:center}
+    .breadcrumb a{color:var(--muted)}
+    .breadcrumb span{opacity:.5}
+
+    .article-header{margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .article-tag{display:inline-block;background:rgba(124,58,237,.12);color:var(--accent-light);border:1px solid rgba(124,58,237,.25);border-radius:999px;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .75rem;margin-bottom:1rem}
+    h1{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem}
+    .article-meta{display:flex;gap:1.25rem;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}
+
+    .article-body{font-size:1rem;line-height:1.8}
+    .article-body h2{font-size:1.5rem;font-weight:700;margin:2.5rem 0 .75rem;letter-spacing:-.015em;color:var(--text)}
+    .article-body h3{font-size:1.1rem;font-weight:600;margin:1.75rem 0 .5rem;color:var(--text)}
+    .article-body p{margin-bottom:1.1rem;color:#cbd5e1}
+    .article-body ul,.article-body ol{margin:1rem 0 1.1rem 1.25rem}
+    .article-body li{margin-bottom:.5rem;color:#cbd5e1}
+    .article-body strong{color:var(--text);font-weight:600}
+
+    .article-body ul:first-of-type{list-style:none;margin-left:0;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);border-radius:10px;padding:1.25rem 1.5rem}
+    .article-body ul:first-of-type li{padding-left:1.5rem;position:relative;margin-bottom:.6rem}
+    .article-body ul:first-of-type li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+
+    table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.875rem}
+    thead th{background:var(--surface);color:var(--muted);padding:.6rem 1rem;text-align:left;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--border)}
+    tbody td{padding:.75rem 1rem;border-bottom:1px solid var(--border);color:#cbd5e1}
+    tbody tr:hover td{background:var(--surface)}
+    .check{color:var(--green);font-weight:700}
+    .cross{color:#ef4444}
+    .partial{color:#f59e0b}
+
+    .article-cta{background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(168,85,247,.08));border:1px solid rgba(124,58,237,.3);border-radius:14px;padding:2rem;text-align:center;margin:3rem 0}
+    .article-cta h3{font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+    .article-cta p{color:var(--muted);font-size:.9rem;margin-bottom:1.25rem}
+    .btn-primary{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent-light));color:#fff;padding:.75rem 1.75rem;border-radius:8px;font-weight:600;font-size:.9rem;text-decoration:none}
+    .btn-primary:hover{opacity:.9;text-decoration:none}
+
+    footer{padding:2rem 1.5rem;text-align:center;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+    footer a{color:var(--muted)}
+
+    @media(max-width:640px){.nav-links{display:none}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Flow<span>Stack</span></a>
+  <div class="nav-links">
+    <a href="/tools">Tools</a>
+    <a href="/blog">Blog</a>
+    <a href="/guide">Guide</a>
+  </div>
+  <a href="/#opt-in" class="nav-cta">Free Toolkit</a>
+</nav>
+
+<div class="page">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/tools">Compare</a>
+    <span>›</span>
+    <span>Pipedream vs Make.com: Code-First vs No-Code Automation (2026)</span>
+  </nav>
+
+  <header class="article-header">
+    <div class="article-tag">Comparison</div>
+    <h1>Pipedream vs Make.com: Code-First vs No-Code Automation (2026)</h1>
+    <div class="article-meta">
+      <span>📅 2026-07-16</span>
+      <span>⏱ 5 min read</span>
+      <span>✍️ FlowStack Editorial</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+<ul>
+  <li><strong>Choose Pipedream</strong> if you're a developer who wants to write Node.js/Python code, need deep API control, or build complex logic without UI constraints.</li>
+  <li><strong>Choose Make.com</strong> if you're non-technical, need the most integrations (7,000+), want visual automation, or require team collaboration with granular permissions.</li>
+  <li><strong>Pipedream wins on:</strong> Flexibility, code-first design, and developer experience.</li>
+  <li><strong>Make.com wins on:</strong> No-code usability, integration breadth, and enterprise features at scale.</li>
+</ul>
+
+<h2>Overview: Pipedream vs Make.com</h2>
+
+<p><strong>Pipedream</strong> is a code-first workflow platform that lets developers and technical teams automate integrations by writing JavaScript or Python in a browser IDE. It's event-driven, serverless, and designed for engineers who want to escape the constraints of visual builders. Pipedream offers 2,000+ pre-built integrations but positions code as the primary interface, making it ideal for teams with development resources.</p>
+
+<p><strong>Make.com</strong> (formerly Integromat) is a visual, no-code automation platform built for business users, marketers, and non-technical teams. It features 7,000+ app integrations, a drag-and-drop interface, and strong team/enterprise features like role-based access, execution history, and error handling. Make.com prioritizes ease-of-use and breadth of integrations over customization depth.</p>
+
+<h2>Pricing Comparison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plan</th>
+      <th>Pipedream</th>
+      <th>Make.com</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Free</strong></td>
+      <td>10,000 events/month</td>
+      <td>1,000 operations/month</td>
+    </tr>
+    <tr>
+      <td><strong>Entry Paid</strong></td>
+      <td>$29/month (Basic, 300k events)</td>
+      <td>$9/month (Core, 10k ops)</td>
+    </tr>
+    <tr>
+      <td><strong>Mid-Tier</strong></td>
+      <td>$99/month (Advanced, 1M events)</td>
+      <td>$16/month (Pro, 100k ops)</td>
+    </tr>
+    <tr>
+      <td><strong>Team/Enterprise</strong></td>
+      <td>Custom pricing</td>
+      <td>$29/month (Teams, 200k ops) + custom</td>
+    </tr>
+    <tr>
+      <td><strong>Self-Hosted</strong></td>
+      <td>Not available</td>
+      <td>Not available</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Pricing as of 2026. Both platforms measure consumption differently: Pipedream counts API events; Make.com counts operations (module executions). A simple 3-step workflow costs 3 operations in Make, but event count in Pipedream depends on trigger frequency.</em></p>
+
+<h2>Feature Comparison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Pipedream</th>
+      <th>Make.com</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Code Support (JS/Python)</strong></td>
+      <td>✓ Native</td>
+      <td>~ Limited (JS in advanced modules)</td>
+    </tr>
+    <tr>
+      <td><strong>Visual Builder</strong></td>
+      <td>~ Basic</td>
+      <td>✓ Comprehensive</td>
+    </tr>
+    <tr>
+      <td><strong>Integrations</strong></td>
+      <td>2,000+</td>
+      <td>7,000+</td>
+    </tr>
+    <tr>
+      <td><strong>Custom API Requests</strong></td>
+      <td>✓ Native HTTP module</td>
+      <td>✓ Webhook module</td>
+    </tr>
+    <tr>
+      <td><strong>Webhook Triggers</strong></td>
+      <td>✓ Full-featured</td>
+      <td>✓ Full-featured</td>
+    </tr>
+    <tr>
+      <td><strong>Scheduling/Cron</strong></td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><strong>Error Handling & Retry</strong></td>
+      <td>✓ Advanced</td>
+      <td>✓ Advanced</td>
+    </tr>
+    <tr>
+      <td><strong>Team Collaboration</strong></td>
+      <td>~ Basic (shared workspaces)</td>
+      <td>✓ Role-based access, audit logs</td>
+    </tr>
+    <tr>
+      <td><strong>Version Control</strong></td>
+      <td>✓ Native Git integration</td>
+      <td>~ Manual versioning</td>
+    </tr>
+    <tr>
+      <td><strong>Execution History & Logs</strong></td>
+      <td>✓ Detailed</td>
+      <td>✓ Detailed</td>
+    </tr>
+    <tr>
+      <td><strong>Data Storage (on-platform)</strong></td>
+      <td>✓ SQL databases</td>
+      <td>~ Data store feature</td>
+    </tr>
+    <tr>
+      <td><strong>API Rate Limits (Free Tier)</strong></td>
+      <td>10k events/month (generous)</td>
+      <td>1k ops/month (restrictive)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>When to Choose Pipedream</h2>
+
+<ul>
+  <li><strong>Custom API integrations:</strong> You need to call proprietary or undocumented APIs with complex authentication (OAuth, mTLS, custom headers). Pipedream's HTTP module and code-first approach handles edge cases Make.com's modules don't cover.</li>
+  <li><strong>Data transformation & logic:</strong> Your workflows require conditional loops, data mapping, or business logic that's awkward in visual builders. Writing JavaScript functions is faster and clearer than dragging modules.</li>
+  <li><strong>Developer-led automation:</strong> Your team includes engineers who want to own their integrations, use version control (Git), and deploy as infrastructure-as-code without low-code tool friction.</li>
+  <li><strong>Cost at scale (high event volume):</strong> You have millions of small API calls monthly. Pipedream's per-event pricing can be cheaper than Make's per-operation model for high-frequency, low-complexity workflows.</li>
+</ul>
+
+<h2>When to Choose Make.com</h2>
+
+<ul>
+  <li><strong>Breadth of integrations:</strong> You need to connect to niche SaaS tools (CRM, accounting, HR platforms). Make.com's 7,000+ pre-built connectors vastly exceed Pipedream's 2,000+, reducing custom API work.</li>
+  <li><strong>Non-technical teams:</strong> Your marketing, operations, or finance team builds workflows without developer support. Make.com's drag-and-drop UI requires no coding knowledge.</li>
+  <li><strong>Enterprise governance:</strong> You need role-based access control, audit trails, approval workflows, and team management. Make.com's Teams plan includes these; Pipedream's collaboration features are basic.</li>
+  <li><strong>Quick automation (no-code):</strong> You need to ship a workflow in hours, not days. Visual builders and pre-built integrations in Make.com move faster than coding custom logic in Pipedream.</li>
+</ul>
+
+<h2>Migration: Switching Between Them</h2>
+
+<p><strong>Pipedream to Make.com:</strong> Moderate difficulty. You'll lose direct code access, so complex JavaScript logic must be rewritten as sequences of visual modules or abstracted into Make's JavaScript helper. Webhook triggers and integrations map directly, but custom HTTP requests need conversion to Make's webhook module. Estimate 2–5 days for a moderately complex workflow.</p>
+
+<p><strong>Make.com to Pipedream:</strong> Low difficulty. Make.com workflows are simpler to recreate in code; you'll gain flexibility. Pre-built integrations may require custom HTTP calls if Pipedream lacks connectors. The visual-to-code transition takes 1–3 days per workflow.</p>
+
+<p><strong>What to watch:</strong> Neither platform offers direct migration tools. You'll manually rebuild workflows or write conversion scripts. Document your current workflow logic (screenshots, execution history) before starting. Both platforms support webhook and API triggers, so data flow integration points are portable.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Can I use Pipedream if I don't know JavaScript?</h3>
+
+<p>Yes, but with limitations. Pipedream's visual workflow builder covers basic integrations, but you'll hit gaps requiring code. If you're non-technical, Make.com is a better fit; Pipedream assumes developer familiarity with APIs and code fundamentals.</p>
+
+<h3>Does Make.com support custom code like Pipedream?</h3>
+
+<p>Partially. Make.com has a JavaScript helper that lets you write inline code within modules, but it's not as powerful as Pipedream's full Node.js environment. For heavy lifting, Pipedream is superior; for light transformations, Make.com's JavaScript helper suffices.</p>
+
+<h3>Which is cheaper: Pipedream or Make.com?</h3>
+
+<p>It depends on your workflow. Make.com's Core plan ($9/month, 10k operations) is cheaper entry-level, but Pipedream's free tier (10k events) is 10x Make.com's (1k operations). At scale, Pipedream's $99/month Advanced plan (1M events) is competitive with Make.com's Pro ($16/month, 100k ops) — but your usage pattern (frequency, complexity) determines the winner. Calculate based on your expected monthly volume.</p>
+
+<h2>Verdict</h2>
+
+<p>Pipedream and Make.com serve different audiences. <strong>Pipedream is the developer's platform</strong>—it trades ease-of-use for code power, native version control, and flexibility in custom logic. <strong>Make.com is the business user's platform</strong>—it trades customization depth for breadth of integrations, team governance, and visual simplicity.</p>
+
+<p>Choose <strong>Pipedream</strong> if you write code or manage a technical team. Choose <strong>Make.com</strong> if you prioritize speed, breadth, and non-technical usability. Both are production-ready; the winner is the one that matches your team's skills and workflow complexity.</p>
+
+<p>Ready to evaluate both hands-on? <a href="/#opt-in">Join our free toolkit</a> for Pipedream and Make.com templates, cost calculators, and a side-by-side workflow audit checklist.</p>
+
+<p><em>Disclosure: Some links on FlowStack are affiliate links. Our reviews are independent and not sponsored by any tool vendor.</em></p>
+  </article>
+
+  <div class="article-cta">
+    <h3>Get the Free AI Workflow Toolkit</h3>
+    <p>50 workflow templates + tool comparison cheat sheet. Free, instant download.</p>
+    <a href="/#opt-in" class="btn-primary">Get Free Toolkit →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p style="margin-bottom:.5rem">
+    <a href="/blog">Blog</a> &nbsp;·&nbsp;
+    <a href="/tools">Tools</a> &nbsp;·&nbsp;
+    <a href="/guide">Playbook</a> &nbsp;·&nbsp;
+    <a href="/vs/pflow-vs-make">pflow vs Make</a>
+  </p>
+  <p>© 2026 FlowStack · <a href="mailto:hello@pflow.org">hello@pflow.org</a></p>
+  <p style="margin-top:.35rem;font-size:.7rem">FlowStack is independent. Not affiliated with pflow, Make.com, n8n, or Zapier.</p>
+</footer>
+
+</body>
+</html>
