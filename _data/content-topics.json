@@ -105,7 +105,8 @@
         "ai workflow compiler",
         "compiled workflow ai"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-17"
     },
     {
       "slug": "deterministic-ai-workflows",
