@@ -117,7 +117,8 @@
         "agentic workflow",
         "ai agent automation"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-18"
     },
     {
       "slug": "ai-automation-use-cases-2026",
