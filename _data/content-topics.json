@@ -275,7 +275,8 @@
         "pipedream vs n8n",
         "n8n pipedream"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-19"
     },
     {
       "slug": "pflow-vs-pipedream",
