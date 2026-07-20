@@ -129,7 +129,8 @@
         "workflow automation examples",
         "ai workflow examples"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-20"
     },
     {
       "slug": "open-source-workflow-automation",
