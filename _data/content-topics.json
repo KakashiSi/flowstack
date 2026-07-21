@@ -141,7 +141,8 @@
         "free workflow automation",
         "n8n open source"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-21"
     },
     {
       "slug": "make-com-pricing-guide",
