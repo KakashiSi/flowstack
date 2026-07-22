@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pflow vs Pipedream: AI Workflow Compiler vs Event-Driven Automation — FlowStack</title>
+  <meta name="description" content="pflow vs Pipedream — two developer tools with very different philosophies. Which fits your AI agent stack?">
+  <link rel="canonical" href="https://pflow.org/vs/pflow-vs-pipedream">
+  <meta property="og:title" content="pflow vs Pipedream: AI Workflow Compiler vs Event-Driven Automation">
+  <meta property="og:description" content="pflow vs Pipedream — two developer tools with very different philosophies. Which fits your AI agent stack?">
+  <meta property="og:url" content="https://pflow.org/vs/pflow-vs-pipedream">
+  <meta property="og:type" content="article">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"pflow vs Pipedream: AI Workflow Compiler vs Event-Driven Automation","description":"pflow vs Pipedream — two developer tools with very different philosophies. Which fits your AI agent stack?","datePublished":"2026-07-22","dateModified":"2026-07-22","author":{"@type":"Organization","name":"FlowStack","url":"https://pflow.org"},"publisher":{"@type":"Organization","name":"FlowStack","url":"https://pflow.org"},"url":"https://pflow.org/vs/pflow-vs-pipedream","inLanguage":"en"}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0a0f;--surface:#13131a;--border:#1e1e2e;--accent:#7c3aed;--accent-light:#a855f7;--green:#10b981;--text:#e2e8f0;--muted:#64748b;--card:#16161f}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.7}
+    a{color:var(--accent-light);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav-logo{font-size:1.1rem;font-weight:700;color:var(--text);text-decoration:none}
+    .nav-logo span{color:var(--accent-light)}
+    .nav-links{display:flex;gap:2rem}
+    .nav-links a{color:var(--muted);font-size:0.9rem}
+    .nav-links a:hover{color:var(--text);text-decoration:none}
+    .nav-cta{background:var(--accent);color:#fff;padding:.5rem 1.25rem;border-radius:8px;font-size:.875rem;font-weight:600}
+    .nav-cta:hover{text-decoration:none;opacity:.9}
+
+    .page{max-width:820px;margin:0 auto;padding:5rem 1.5rem 4rem}
+
+    .breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:2rem;display:flex;gap:.5rem;align-items:center}
+    .breadcrumb a{color:var(--muted)}
+    .breadcrumb span{opacity:.5}
+
+    .article-header{margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .article-tag{display:inline-block;background:rgba(124,58,237,.12);color:var(--accent-light);border:1px solid rgba(124,58,237,.25);border-radius:999px;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .75rem;margin-bottom:1rem}
+    h1{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem}
+    .article-meta{display:flex;gap:1.25rem;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}
+
+    .article-body{font-size:1rem;line-height:1.8}
+    .article-body h2{font-size:1.5rem;font-weight:700;margin:2.5rem 0 .75rem;letter-spacing:-.015em;color:var(--text)}
+    .article-body h3{font-size:1.1rem;font-weight:600;margin:1.75rem 0 .5rem;color:var(--text)}
+    .article-body p{margin-bottom:1.1rem;color:#cbd5e1}
+    .article-body ul,.article-body ol{margin:1rem 0 1.1rem 1.25rem}
+    .article-body li{margin-bottom:.5rem;color:#cbd5e1}
+    .article-body strong{color:var(--text);font-weight:600}
+
+    .article-body ul:first-of-type{list-style:none;margin-left:0;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);border-radius:10px;padding:1.25rem 1.5rem}
+    .article-body ul:first-of-type li{padding-left:1.5rem;position:relative;margin-bottom:.6rem}
+    .article-body ul:first-of-type li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+
+    table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.875rem}
+    thead th{background:var(--surface);color:var(--muted);padding:.6rem 1rem;text-align:left;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--border)}
+    tbody td{padding:.75rem 1rem;border-bottom:1px solid var(--border);color:#cbd5e1}
+    tbody tr:hover td{background:var(--surface)}
+    .check{color:var(--green);font-weight:700}
+    .cross{color:#ef4444}
+    .partial{color:#f59e0b}
+
+    .article-cta{background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(168,85,247,.08));border:1px solid rgba(124,58,237,.3);border-radius:14px;padding:2rem;text-align:center;margin:3rem 0}
+    .article-cta h3{font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+    .article-cta p{color:var(--muted);font-size:.9rem;margin-bottom:1.25rem}
+    .btn-primary{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent-light));color:#fff;padding:.75rem 1.75rem;border-radius:8px;font-weight:600;font-size:.9rem;text-decoration:none}
+    .btn-primary:hover{opacity:.9;text-decoration:none}
+
+    footer{padding:2rem 1.5rem;text-align:center;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+    footer a{color:var(--muted)}
+
+    @media(max-width:640px){.nav-links{display:none}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Flow<span>Stack</span></a>
+  <div class="nav-links">
+    <a href="/tools">Tools</a>
+    <a href="/blog">Blog</a>
+    <a href="/guide">Guide</a>
+  </div>
+  <a href="/#opt-in" class="nav-cta">Free Toolkit</a>
+</nav>
+
+<div class="page">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/tools">Compare</a>
+    <span>›</span>
+    <span>pflow vs Pipedream: AI Workflow Compiler vs Event-Driven Automation</span>
+  </nav>
+
+  <header class="article-header">
+    <div class="article-tag">Comparison</div>
+    <h1>pflow vs Pipedream: AI Workflow Compiler vs Event-Driven Automation</h1>
+    <div class="article-meta">
+      <span>📅 2026-07-22</span>
+      <span>⏱ 4 min read</span>
+      <span>✍️ FlowStack Editorial</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+<ul>
+  <li><strong>Pick pflow if:</strong> You want a free, open-source compiler for complex AI workflows with code-first control and no vendor lock-in.</li>
+  <li><strong>Pick Pipedream if:</strong> You need event-driven automation with native integrations, a visual builder, and reliable managed hosting.</li>
+  <li><strong>Budget winner:</strong> pflow (free CLI forever); cost winner at scale: Pipedream (predictable event-based pricing).</li>
+  <li><strong>Best for developers:</strong> pflow; best for non-technical teams: Pipedream.</li>
+</ul>
+
+<h2>Overview: pflow vs Pipedream</h2>
+
+<p><strong>pflow</strong> is a free, open-source AI workflow compiler designed for developers. It compiles human-readable workflow definitions into optimized execution graphs, with first-class support for LLM chains, function calls, and parallel processing. The CLI is permanently free; a managed cloud platform is coming in Q3 2026. pflow prioritizes transparency, code ownership, and avoiding vendor lock-in.</p>
+
+<p><strong>Pipedream</strong> is a managed, event-driven integration platform that connects APIs, webhooks, and databases with a visual workflow builder. It offers native integrations with 2,000+ services, serverless execution, and a REST API for triggering workflows. Pipedream targets teams that need quick integration without coding infrastructure, with pricing based on events processed.</p>
+
+<h2>Pricing Comparison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plan</th>
+      <th>pflow</th>
+      <th>Pipedream</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Free Tier</strong></td>
+      <td>CLI forever (unlimited local workflows)</td>
+      <td>10,000 events/month</td>
+    </tr>
+    <tr>
+      <td><strong>Starter</strong></td>
+      <td>Cloud (Q3 2026, pricing TBA)</td>
+      <td>$29/month (up to 100k events)</td>
+    </tr>
+    <tr>
+      <td><strong>Professional</strong></td>
+      <td>Cloud (Q3 2026, pricing TBA)</td>
+      <td>$99/month (up to 1M events)</td>
+    </tr>
+    <tr>
+      <td><strong>Enterprise</strong></td>
+      <td>Custom (self-hosted)</td>
+      <td>Custom (unlimited events)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Note: pflow cloud pricing is not yet public. Current usage is free via the open-source CLI.</em></p>
+
+<h2>Feature Comparison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>pflow</th>
+      <th>Pipedream</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Visual Workflow Builder</strong></td>
+      <td>✗</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><strong>Code-First/CLI Support</strong></td>
+      <td>✓</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td><strong>Open Source</strong></td>
+      <td>✓</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td><strong>Self-Hosted Option</strong></td>
+      <td>✓</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td><strong>LLM/AI Node Support</strong></td>
+      <td>✓ (native)</td>
+      <td>~ (via API calls)</td>
+    </tr>
+    <tr>
+      <td><strong>Native Integrations (2000+)</strong></td>
+      <td>✗</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><strong>Webhook Triggers</strong></td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><strong>Scheduled Workflows</strong></td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><strong>Error Handling/Retry Logic</strong></td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><strong>Conditional Logic</strong></td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><strong>Parallel Processing</strong></td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><strong>REST API for Workflow Triggers</strong></td>
+      <td>~ (self-hosted only)</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><strong>Team Collaboration</strong></td>
+      <td>~ (via Git)</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><strong>Managed Hosting</strong></td>
+      <td>✗ (coming Q3 2026)</td>
+      <td>✓</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>When to Choose pflow</h2>
+
+<ul>
+  <li><strong>AI/LLM Workflows:</strong> You're building complex chains with language models, function calling, and reasoning. pflow has native support for LLM orchestration without wrapping API calls.</li>
+  <li><strong>Developer Teams:</strong> Your team prefers code over UI, version control via Git, and wants full control over deployment and infrastructure.</li>
+  <li><strong>Data Privacy/Compliance:</strong> You need self-hosted or air-gapped deployments and cannot use third-party managed platforms.</li>
+  <li><strong>Cost-Sensitive at Scale:</strong> The free CLI is unlimited locally; you only pay for cloud compute when you're ready, avoiding per-event pricing.</li>
+</ul>
+
+<h2>When to Choose Pipedream</h2>
+
+<ul>
+  <li><strong>Rapid SaaS Integration:</strong> You need to connect Slack, Airtable, Stripe, Salesforce, and 2,000+ other services with minimal configuration.</li>
+  <li><strong>Non-Technical Teams:</strong> Your team needs a drag-and-drop builder without coding; visual workflows reduce onboarding time.</li>
+  <li><strong>Event-Heavy Workflows:</strong> You have high-volume webhook ingestion (customer data, IoT, analytics) and benefit from event-based, pay-as-you-go pricing.</li>
+  <li><strong>Managed Reliability:</strong> You want Pipedream to handle uptime, scaling, and infrastructure; you don't want to self-host.</li>
+</ul>
+
+<h2>Migration: Switching Between Them</h2>
+
+<p><strong>pflow → Pipedream:</strong> Moderate effort. Pipedream uses a visual JSON-based workflow format. You'll need to map pflow's workflow definition (YAML/Python) into Pipedream's Node.js-based steps. Native integrations in Pipedream reduce custom code, but you lose code-first control. Plan 1–2 weeks for non-trivial migrations.</p>
+
+<p><strong>Pipedream → pflow:</strong> Easier for teams comfortable with code. Export Pipedream workflows and rewrite them as pflow definitions. You gain version control and self-hosting but lose Pipedream's 2,000+ native connectors—you'll write HTTP/API steps instead. Plan 3–5 days for small workflows, longer for heavily integrated ones.</p>
+
+<p><strong>Key Watch Points:</strong> Authentication (pflow uses environment variables; Pipedream uses managed secrets), webhook URLs (must be updated in source systems), and event volume (switching from Pipedream's per-event model to pflow's infrastructure costs is a different pricing model).</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Does pflow have a managed cloud yet?</h3>
+
+<p>No. pflow's cloud platform is coming in Q3 2026, and users can join the waitlist. Until then, the CLI is free and fully functional for local development; self-hosting is the cloud option.</p>
+
+<h3>Can I use Pipedream without writing code?</h3>
+
+<p>Yes. Pipedream's visual builder and 2,000+ native integrations let you build workflows without code. However, for custom logic, JavaScript steps are available and straightforward.</p>
+
+<h3>Which is cheaper at scale?</h3>
+
+<p>It depends on volume and infrastructure. pflow's free CLI stays free; self-hosting costs vary by your cloud provider. Pipedream at 1M events/month is $99/month, predictable but non-negotiable. For low-volume workflows (under 100k events/month), both are similarly priced.</p>
+
+<h2>Verdict</h2>
+
+<p>pflow excels for developers and AI-first teams that prioritize code ownership, LLM integration, and long-term cost predictability. Pipedream wins for businesses that need fast SaaS integration, managed reliability, and a non-technical interface. If you're building LLM applications or need self-hosting, choose pflow. If you're integrating pre-built services at scale, choose Pipedream. Both are production-ready; your choice depends on whether you want to own your infrastructure or outsource it.</p>
+
+<p>Ready to build workflows with confidence? <strong><a href="/#opt-in">Join our free toolkit</a></strong> for pflow and Pipedream templates, migration guides, and cost calculators.</p>
+
+<p><em>Disclosure: Some links on FlowStack are affiliate links. Our reviews are independent and not sponsored by any tool vendor.</em></p>
+  </article>
+
+  <div class="article-cta">
+    <h3>Get the Free AI Workflow Toolkit</h3>
+    <p>50 workflow templates + tool comparison cheat sheet. Free, instant download.</p>
+    <a href="/#opt-in" class="btn-primary">Get Free Toolkit →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p style="margin-bottom:.5rem">
+    <a href="/blog">Blog</a> &nbsp;·&nbsp;
+    <a href="/tools">Tools</a> &nbsp;·&nbsp;
+    <a href="/guide">Playbook</a> &nbsp;·&nbsp;
+    <a href="/vs/pflow-vs-make">pflow vs Make</a>
+  </p>
+  <p>© 2026 FlowStack · <a href="mailto:hello@pflow.org">hello@pflow.org</a></p>
+  <p style="margin-top:.35rem;font-size:.7rem">FlowStack is independent. Not affiliated with pflow, Make.com, n8n, or Zapier.</p>
+</footer>
+
+</body>
+</html>

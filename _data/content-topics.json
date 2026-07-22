@@ -290,7 +290,8 @@
         "pflow vs pipedream",
         "pflow pipedream comparison"
       ],
-      "done": false
+      "done": true,
+      "publishedAt": "2026-07-22"
     },
     {
       "slug": "pflow-vs-relevance-ai",
